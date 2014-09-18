@@ -22,6 +22,7 @@
 		A8A984DE19CA545300D3DAE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A984BD19CA545300D3DAE3 /* UIKit.framework */; };
 		A8A984E619CA545300D3DAE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8A984E419CA545300D3DAE3 /* InfoPlist.strings */; };
 		A8A984E819CA545300D3DAE3 /* CHZZSudokuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A984E719CA545300D3DAE3 /* CHZZSudokuTests.m */; };
+		A8A984F319CA54D700D3DAE3 /* CHZZGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		A8A984E319CA545300D3DAE3 /* CHZZSudokuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CHZZSudokuTests-Info.plist"; sourceTree = "<group>"; };
 		A8A984E519CA545300D3DAE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A8A984E719CA545300D3DAE3 /* CHZZSudokuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHZZSudokuTests.m; sourceTree = "<group>"; };
+		A8A984F119CA54D700D3DAE3 /* CHZZGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHZZGridView.h; sourceTree = "<group>"; };
+		A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZZGridView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				A8A984CB19CA545300D3DAE3 /* Main_iPhone.storyboard */,
 				A8A984CE19CA545300D3DAE3 /* Main_iPad.storyboard */,
 				A8A984D119CA545300D3DAE3 /* CHZZViewController.h */,
+				A8A984F119CA54D700D3DAE3 /* CHZZGridView.h */,
+				A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */,
 				A8A984D219CA545300D3DAE3 /* CHZZViewController.m */,
 				A8A984D419CA545300D3DAE3 /* Images.xcassets */,
 				A8A984C019CA545300D3DAE3 /* Supporting Files */,
@@ -255,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A984C619CA545300D3DAE3 /* main.m in Sources */,
+				A8A984F319CA54D700D3DAE3 /* CHZZGridView.m in Sources */,
 				A8A984CA19CA545300D3DAE3 /* CHZZAppDelegate.m in Sources */,
 				A8A984D319CA545300D3DAE3 /* CHZZViewController.m in Sources */,
 			);
