@@ -21,7 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		5B3877DC19CF81400015446B /* CHZZNumpadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B3877DB19CF81400015446B /* CHZZNumpadView.m */; };
+		A8590AB719CF938C001CF7FA /* CHZZNumpadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8590AB619CF938C001CF7FA /* CHZZNumpadView.m */; };
 		A8A984BA19CA545300D3DAE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A984B919CA545300D3DAE3 /* Foundation.framework */; };
 		A8A984BC19CA545300D3DAE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A984BB19CA545300D3DAE3 /* CoreGraphics.framework */; };
 		A8A984BE19CA545300D3DAE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A984BD19CA545300D3DAE3 /* UIKit.framework */; };
@@ -51,8 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5B3877DA19CF81400015446B /* CHZZNumpadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHZZNumpadView.h; sourceTree = "<group>"; };
-		5B3877DB19CF81400015446B /* CHZZNumpadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZZNumpadView.m; sourceTree = "<group>"; };
+		A8590AB519CF938C001CF7FA /* CHZZNumpadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHZZNumpadView.h; path = ../CHZZNumpadView.h; sourceTree = "<group>"; };
+		A8590AB619CF938C001CF7FA /* CHZZNumpadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHZZNumpadView.m; path = ../CHZZNumpadView.m; sourceTree = "<group>"; };
 		A8A984B619CA545300D3DAE3 /* CHZZSudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHZZSudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A984B919CA545300D3DAE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A8A984BB19CA545300D3DAE3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -142,8 +142,8 @@
 				A8A984F119CA54D700D3DAE3 /* CHZZGridView.h */,
 				A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */,
 				A8A984D219CA545300D3DAE3 /* CHZZViewController.m */,
-				5B3877DA19CF81400015446B /* CHZZNumpadView.h */,
-				5B3877DB19CF81400015446B /* CHZZNumpadView.m */,
+				A8590AB519CF938C001CF7FA /* CHZZNumpadView.h */,
+				A8590AB619CF938C001CF7FA /* CHZZNumpadView.m */,
 				A8A984D419CA545300D3DAE3 /* Images.xcassets */,
 				A8A984C019CA545300D3DAE3 /* Supporting Files */,
 			);
@@ -296,7 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A984C619CA545300D3DAE3 /* main.m in Sources */,
-				5B3877DC19CF81400015446B /* CHZZNumpadView.m in Sources */,
+				A8590AB719CF938C001CF7FA /* CHZZNumpadView.m in Sources */,
 				A8A984F319CA54D700D3DAE3 /* CHZZGridView.m in Sources */,
 				A8A984CA19CA545300D3DAE3 /* CHZZAppDelegate.m in Sources */,
 				A8A984D319CA545300D3DAE3 /* CHZZViewController.m in Sources */,
