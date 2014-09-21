@@ -50,7 +50,7 @@
             CGRect buttonFrame = CGRectMake(x, y, buttonSize, buttonSize);
             UIButton* button = [[UIButton alloc] initWithFrame:buttonFrame];
             button.tag = row * 10 + col; // e.g: for the cell of row 2 col 7, the tag is 27
-            button.backgroundColor = [UIColor whiteColor];
+            [button setBackgroundColor:[UIColor whiteColor]];
             [button setBackgroundImage:[UIImage imageNamed:@"gray-highlight"] forState:UIControlStateHighlighted];
             [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
             
