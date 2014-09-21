@@ -2,12 +2,16 @@
 //  CHZZNumpadView.h
 //  CHZZSudoku
 //
-//  Created by Cyrus Huang on 9/21/14.
+//  Created by Zehao Zhang on 14-9-21.
 //  Copyright (c) 2014 Cyrus Huang, Zehao Zhang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface CHZZNumpadView : NSObject
+@interface CHZZNumpadView : UIView
+
+- (id) initWithFrame:(CGRect)frame length:(CGFloat) length;
+
+- (int) getCurrentValue:(id)sender;
 
 @end
