@@ -8,6 +8,7 @@
 
 #import "CHZZViewController.h"
 #import "CHZZGridView.h"
+#import "CHZZNumpadView.h"
 
 // For now, the initial grid is hardcoded
 int initialGrid[9][9]={
@@ -24,6 +25,7 @@ int initialGrid[9][9]={
 
 @interface CHZZViewController () {
     CHZZGridView* _gridView;
+    CHZZNumpadView* _numPadView;
 }
 
 @end
@@ -43,6 +45,15 @@ int initialGrid[9][9]={
     CGFloat y    = CGRectGetHeight(frame) * (1 - framePortion) / 2;
     CGFloat size = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)) * framePortion;
     CGRect gridFrame = CGRectMake(x, y, size, size);
+    
+    CGFloat numPadx = x;
+    CGFloat numPady = size + 1.5 * y;
+    CGFloat numPadheight = size * 0.189;
+    
+    CGRect numPadFrame = CGRectMake(numPadx, numPady, size, numPadheight);
+    
+    _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
+    [self.view addSubview:_numPadView];
     
     // Initialize _gridView and set initial values from initialGrid
     _gridView = [[CHZZGridView alloc] initWithFrame:gridFrame size:size];
