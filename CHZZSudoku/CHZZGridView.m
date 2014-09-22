@@ -66,7 +66,8 @@
 }
 
 // the number of 0 is used to represent blank
-- (void)setValueAtRow:(int)row col:(int)col to:(int)value {
+- (void)setValueAtRow:(int)row col:(int)col to:(int)value
+{
     UIButton* button = _cells[row][col];
     if (value == 0) {
         [button setTitle:@"" forState:UIControlStateNormal];

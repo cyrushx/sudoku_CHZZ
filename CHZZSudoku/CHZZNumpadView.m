@@ -36,7 +36,8 @@
     
     CGFloat buttonY = blockSeparatorWidth;
     int titleNum;
-    for (int col = 0; col < 9; col++) {
+    for (int col = 0; col < 9; col++)
+    {
         int cellSepLeftNum = col;
         titleNum = col + 1;
         

@@ -40,6 +40,10 @@ int initialGrid[9][9]={
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    // initialize _gridModel
+    _gridModel = [[CHZZGridModel alloc] init];
+    
+    
     // create gridFrame
     float framePortion = 0.8;
     CGRect frame = self.view.frame;
@@ -70,9 +74,6 @@ int initialGrid[9][9]={
     // initialize _nunPadView
     _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
     [self.view addSubview:_numPadView];
-    
-    // initialize _gridModel
-    _gridModel = [[CHZZGridModel alloc] init];
 }
 
 - (void)gridCellSelectedAtRow:(NSNumber*)row col:(NSNumber*) col

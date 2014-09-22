@@ -37,11 +37,18 @@ int initGrid[9][9]={
 
 @implementation CHZZGridModel
 
--(int) getValueAtRow:(int)row colum:(int)colum{
+-(void) generateGrid
+{
+    //Do nothing now
+}
+
+-(int) getValueAtRow:(int)row colum:(int)colum
+{
     return mutableGridCopy[row][colum];
 }
 
--(void) setValueAtRow:(int)row colum:(int)colum to:(int)value{
+-(void) setValueAtRow:(int)row colum:(int)colum to:(int)value
+{
     mutableGridCopy[row][colum] = value;
 }
 
@@ -50,7 +57,8 @@ int initGrid[9][9]={
     return initGrid[row][colum]==0;
 }
 
--(bool) isConsistentAtRow:(int)row colum:(int)colum for:(int)num{
+-(bool) isConsistentAtRow:(int)row colum:(int)colum for:(int)num
+{
     return [self rowCheck:row for:num]&&[self colCheck:colum for:num]&&[self blockCheck:row col:colum for:num];
 }
 
