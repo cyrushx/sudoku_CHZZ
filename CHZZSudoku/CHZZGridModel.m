@@ -7,8 +7,9 @@
 //
 
 #import "CHZZGridModel.h"
+
 // For now, the initial grid is hardcoded
-int initGrid[9][9]={
+int mutableGridCopy[9][9]={
     {7,0,0,4,2,0,0,0,9},
     {0,0,9,5,0,0,0,0,4},
     {0,2,0,6,9,0,5,0,0},
@@ -19,7 +20,9 @@ int initGrid[9][9]={
     {3,4,0,9,0,0,1,0,0},
     {8,0,0,3,0,2,7,4,0}
 };
-int mutableGridCopy[9][9]={
+
+// this grid can be modified
+int initGrid[9][9]={
     {7,0,0,4,2,0,0,0,9},
     {0,0,9,5,0,0,0,0,4},
     {0,2,0,6,9,0,5,0,0},
@@ -53,42 +56,30 @@ int mutableGridCopy[9][9]={
 
 -(bool) rowCheck:(int)row for:(int)num
 {
-    for(int col = 0;col<9;col++){
-        if(mutableGridCopy[row][col]==num){
-            NSLog(@"row inconsistent");
-            return NO;
-        }
+    for(int col = 0; col < 9; col++){
+        if(mutableGridCopy[row][col] == num) return NO;
     }
     return YES;
 }
 
 -(bool) colCheck:(int)col for:(int)num
 {
-    
     for(int row = 0;row<9;row++){
-        if(mutableGridCopy[row][col]==num){
-            NSLog(@"colum inconsistent");
-            return NO;
-        }
+        if(mutableGridCopy[row][col]==num) return NO;
     }
     return YES;
 }
 
 -(bool) blockCheck:(int)row col:(int)col for:(int)num
 {
-    int modRow = row%3;
-    int modCol = col%3;
-    
-    NSLog(@"rowmod %d colmod %d",modRow,modCol);
+    int modRow = row % 3;
+    int modCol = col % 3;
     
     for(int i = row-modRow; i < 3 +row - modRow; i++)
     {
         for(int j = col-modCol; j < 3 + col - modCol; j++)
         {
-            if (mutableGridCopy[i][j] == num) {
-                NSLog(@"block inconsistent");
-                return NO;
-            }
+            if (mutableGridCopy[i][j] == num) return NO;
         }
     }
     return YES;

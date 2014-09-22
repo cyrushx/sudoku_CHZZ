@@ -11,7 +11,6 @@
 @interface CHZZNumpadView : UIView
 
 - (id) initWithFrame:(CGRect)frame length:(CGFloat) length;
-
 - (int) getCurrentValue;
 
 @end

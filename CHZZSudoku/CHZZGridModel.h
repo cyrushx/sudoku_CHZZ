@@ -11,13 +11,8 @@
 @interface CHZZGridModel : NSObject
 
 -(int) getValueAtRow:(int)row colum:(int)colum;
-
 -(void) setValueAtRow:(int)row colum:(int)colum to:(int)to;
-
 -(bool) isMutableAtRow:(int)row colum:(int)colum;
-
 -(bool) isConsistentAtRow:(int)row colum:(int)colum for:(int)num;
-
-
 
 @end
