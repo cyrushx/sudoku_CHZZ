@@ -3,7 +3,7 @@
 //  CHZZSudoku
 //
 //  Created by Zehao Zhang on 14-9-21.
-//  Copyright (c) 2014 Cyrus Huang, Zehao Zhang. All rights reserved.
+//  Copyright (c) 2014年 Cyrus Huang, Zehao Zhang. All rights reserved.
 //
 
 #import "CHZZNumpadView.h"
@@ -56,11 +56,11 @@
 {
     UIButton* button = (UIButton*) sender;
     _currentValue = [[button currentTitle] integerValue];
-    [self getCurrentValue:sender];
+    [self getCurrentValue];
     
 }
 
-- (int)getCurrentValue:(id)sender
+- (int)getCurrentValue
 {
     NSLog(@"numpad selected: %d",_currentValue);
     return _currentValue;

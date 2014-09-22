@@ -9,6 +9,7 @@
 #import "CHZZViewController.h"
 #import "CHZZGridView.h"
 #import "CHZZNumpadView.h"
+#import "CHZZGridModel.h"
 
 // For now, the initial grid is hardcoded
 int initialGrid[9][9]={
@@ -26,6 +27,7 @@ int initialGrid[9][9]={
 @interface CHZZViewController () {
     CHZZGridView* _gridView;
     CHZZNumpadView* _numPadView;
+    CHZZGridModel* _gridModel;
 }
 
 @end
@@ -46,15 +48,6 @@ int initialGrid[9][9]={
     CGFloat size = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)) * framePortion;
     CGRect gridFrame = CGRectMake(x, y, size, size);
     
-    CGFloat numPadx = x;
-    CGFloat numPady = size + 1.5 * y;
-    CGFloat numPadheight = size * 0.189;
-    
-    CGRect numPadFrame = CGRectMake(numPadx, numPady, size, numPadheight);
-    
-    _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
-    [self.view addSubview:_numPadView];
-    
     // Initialize _gridView and set initial values from initialGrid
     _gridView = [[CHZZGridView alloc] initWithFrame:gridFrame size:size];
     for (int row = 0; row < 9; row++) {
@@ -66,12 +59,33 @@ int initialGrid[9][9]={
     [self.view addSubview:_gridView];
     
     [_gridView setTarget:self action:@selector(gridCellSelectedAtRow:col:)];
+    
+    CGFloat numPadx = x;
+    CGFloat numPady = size + 1.5 * y;
+    CGFloat numPadheight = size * 0.189;
+    
+    CGRect numPadFrame = CGRectMake(numPadx, numPady, size, numPadheight);
+    
+    _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
+    [self.view addSubview:_numPadView];
+    
+    _gridModel = [[CHZZGridModel alloc] init];
 }
 
 - (void)gridCellSelectedAtRow:(NSNumber*)row col:(NSNumber*) col
 {
     // For now, simply display row and col info of the cell selected
     NSLog(@"The button is pressed, with row %@ and col %@", row, col);
+    int r = [row intValue];
+    int c = [col intValue];
+    if([_gridModel isMutableAtRow:r colum:c]){
+        int value = [_numPadView getCurrentValue];
+        if([_gridModel isConsistentAtRow:r colum:c for:value]){
+            [_gridModel setValueAtRow:r colum:c to:value];
+            [_gridView setValueAtRow:r col:c to:value];
+        }
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning

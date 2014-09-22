@@ -45,7 +45,7 @@
             // calculate the coordinate of the top left corner of the button
             CGFloat x = blockSepLeftNum * blockSeparatorWidth + cellSepLeftNum * cellSeparatorWidth + col * buttonSize;
             CGFloat y = blockSepTopNum * blockSeparatorWidth  + cellSepTopNum * cellSeparatorWidth  + row * buttonSize;
-
+            
             // create button and assign property for the button
             CGRect buttonFrame = CGRectMake(x, y, buttonSize, buttonSize);
             UIButton* button = [[UIButton alloc] initWithFrame:buttonFrame];

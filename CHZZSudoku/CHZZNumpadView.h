@@ -3,7 +3,7 @@
 //  CHZZSudoku
 //
 //  Created by Zehao Zhang on 14-9-21.
-//  Copyright (c) 2014 Cyrus Huang, Zehao Zhang. All rights reserved.
+//  Copyright (c) 2014年 Cyrus Huang, Zehao Zhang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,6 +12,6 @@
 
 - (id) initWithFrame:(CGRect)frame length:(CGFloat) length;
 
-- (int) getCurrentValue:(id)sender;
+- (int) getCurrentValue;
 
 @end
