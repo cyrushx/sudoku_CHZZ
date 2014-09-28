@@ -11,8 +11,8 @@
 #import "CHZZNumpadView.h"
 #import "CHZZGridModel.h"
 
-// For now, the initial grid is hardcoded
-//int initialGrid[9][9];
+
+BOOL ASSISTON = NO;
 
 @interface CHZZViewController () {
     CHZZGridView* _gridView;
@@ -33,9 +33,9 @@
     
     // set up start and reset buttons
     CGFloat yButton = CGRectGetHeight(frame) * 0.9;
-    CGFloat xButtonStart = CGRectGetWidth(frame) * 0.2;
-    CGFloat startButtonSize = xButtonStart;
-    CGFloat xButtonReset = (xButtonStart * 2 + startButtonSize);
+    CGFloat xButtonStart = CGRectGetWidth(frame) * 0.1;
+    CGFloat startButtonSize = xButtonStart * 2;
+    CGFloat xButtonReset = (xButtonStart * 3 + startButtonSize * 2);
     CGFloat resetButtonSize = startButtonSize;
     
     CGRect startFrame = CGRectMake(xButtonStart, yButton, startButtonSize, startButtonSize / 2);
@@ -59,6 +59,26 @@
     reset.titleLabel.font = [UIFont systemFontOfSize:30];
     [self.view addSubview:reset];
     [reset addTarget:self action:@selector(resetCurrentGame) forControlEvents:UIControlEventTouchUpInside];
+    
+    // set up assist switch
+    CGFloat xSwitch = CGRectGetWidth(frame) * 0.53;
+    CGFloat ySwitch = CGRectGetHeight(frame) * 0.925;
+    CGFloat switchSize = startButtonSize;
+    CGRect switchFrame = CGRectMake(xSwitch, ySwitch, switchSize, switchSize/2);
+    UISwitch* assist = [[UISwitch alloc] initWithFrame:switchFrame];
+    [self.view addSubview:assist];
+    [assist addTarget:self action:@selector(flip:) forControlEvents:UIControlEventValueChanged];
+    
+    // set up assist label
+    CGFloat xLabel = CGRectGetWidth(frame) * 0.43;
+    CGFloat yLabel = CGRectGetHeight(frame) * 0.9;
+    CGFloat labelSize = startButtonSize;
+    CGRect labelFrame = CGRectMake(xLabel, yLabel, labelSize, labelSize/2);
+    UILabel* label = [[UILabel alloc] initWithFrame:labelFrame];
+    [label setText:@"Assit On: "];
+    [label setTextColor:[UIColor blackColor]];
+    [self.view addSubview:label];
+    
     
     // initialize _gridModel
     _gridModel = [[CHZZGridModel alloc] init];
@@ -126,6 +146,18 @@
         }
     }
     
+}
+
+- (IBAction)flip:(id)sender {
+    UISwitch* assist = (UISwitch*) sender;
+    if (assist.on)
+    {
+        ASSISTON = YES;
+    }
+    else
+    {
+        ASSISTON = NO;
+    }
 }
 
 - (void)didReceiveMemoryWarning
