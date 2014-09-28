@@ -9,37 +9,52 @@
 #import "CHZZGridModel.h"
 
 // For now, the initial grid is hardcoded
-int mutableGridCopy[9][9]={
-    {7,0,0,4,2,0,0,0,9},
-    {0,0,9,5,0,0,0,0,4},
-    {0,2,0,6,9,0,5,0,0},
-    {6,5,0,0,0,0,4,3,0},
-    {0,8,0,0,0,6,0,0,7},
-    {0,1,0,0,4,5,6,0,0},
-    {0,0,0,8,6,0,0,0,2},
-    {3,4,0,9,0,0,1,0,0},
-    {8,0,0,3,0,2,7,4,0}
-};
+int mutableGridCopy[9][9];
 
 // this grid can be modified
-int initGrid[9][9]={
-    {7,0,0,4,2,0,0,0,9},
-    {0,0,9,5,0,0,0,0,4},
-    {0,2,0,6,9,0,5,0,0},
-    {6,5,0,0,0,0,4,3,0},
-    {0,8,0,0,0,6,0,0,7},
-    {0,1,0,0,4,5,6,0,0},
-    {0,0,0,8,6,0,0,0,2},
-    {3,4,0,9,0,0,1,0,0},
-    {8,0,0,3,0,2,7,4,0}
-};
-
+int initGrid[9][9];
 
 @implementation CHZZGridModel
 
 -(void) generateGrid
 {
-    //Do nothing now
+    // randomly choose between grid1.txt and grid2.txt
+    NSString* path;
+    NSInteger fileNum = arc4random() % 1;
+    if (fileNum == 0)
+        path = [[NSBundle mainBundle] pathForResource:@"grid1" ofType:@"txt"];
+    else
+        path = [[NSBundle mainBundle] pathForResource:@"grid2" ofType:@"txt"];
+    
+    NSError* error;
+    
+    NSString* readString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+    
+    NSInteger stringLength = [readString length];
+    NSInteger gridLength   = 82; // 81 grids and a line break
+    
+    // find how many grids are stored in text file
+    NSInteger gridNum  = stringLength / gridLength;
+    NSInteger gridLine = arc4random() % gridNum;
+    //NSInteger gridLine = 2;
+    NSInteger start = gridLine * gridLength;
+    
+    NSString* gridString = [readString substringWithRange:NSMakeRange(start, gridLength - 1)];
+    
+    NSLog(@"Length of file: %d", [readString length]);
+    NSLog(@"The found string: %@", gridString);
+    
+    // generate grid
+    for (NSInteger row = 0; row < 9; row++)
+    {
+        for (NSInteger col = 0; col < 9; col++)
+        {
+            NSString* value = [gridString substringWithRange:NSMakeRange(row * 9 + col, 1)];
+            mutableGridCopy[row][col] = [value intValue];
+            initGrid[row][col] = [value intValue];
+        }
+    }
+    
 }
 
 -(int) getValueAtRow:(int)row colum:(int)colum

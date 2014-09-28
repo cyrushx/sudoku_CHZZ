@@ -12,17 +12,7 @@
 #import "CHZZGridModel.h"
 
 // For now, the initial grid is hardcoded
-int initialGrid[9][9]={
-    {7,0,0,4,2,0,0,0,9},
-    {0,0,9,5,0,0,0,0,4},
-    {0,2,0,6,9,0,5,0,0},
-    {6,5,0,0,0,0,4,3,0},
-    {0,8,0,0,0,6,0,0,7},
-    {0,1,0,0,4,5,6,0,0},
-    {0,0,0,8,6,0,0,0,2},
-    {3,4,0,9,0,0,1,0,0},
-    {8,0,0,3,0,2,7,4,0}
-};
+//int initialGrid[9][9];
 
 @interface CHZZViewController () {
     CHZZGridView* _gridView;
@@ -42,7 +32,7 @@ int initialGrid[9][9]={
     
     // initialize _gridModel
     _gridModel = [[CHZZGridModel alloc] init];
-    
+    [_gridModel generateGrid];
     
     // create gridFrame
     float framePortion = 0.8;
@@ -56,7 +46,7 @@ int initialGrid[9][9]={
     _gridView = [[CHZZGridView alloc] initWithFrame:gridFrame size:size];
     for (int row = 0; row < 9; row++) {
         for (int col = 0; col < 9; col++) {
-            int value = initialGrid[row][col];
+            int value = _gridModel->initGrid[row][col];
             [_gridView setValueAtRow:row col:col to:value];
         }
     }

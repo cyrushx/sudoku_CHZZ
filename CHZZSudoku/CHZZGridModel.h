@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface CHZZGridModel : NSObject
+{
+    @public
+    int initGrid[9][9];
+}
 
 -(void) generateGrid;
 -(int) getValueAtRow:(int)row colum:(int)colum;
