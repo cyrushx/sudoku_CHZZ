@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>BACB8DEE-8E75-4FDD-B251-55EA500F6F26</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CHZZSudoku</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>298ADD598EB9ECDB46B9DAB4687F34680533CA87</key>
+		<string>https://github.com/cyrushx/sudoku_CHZZ.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CHZZSudoku.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>298ADD598EB9ECDB46B9DAB4687F34680533CA87</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cyrushx/sudoku_CHZZ.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>298ADD598EB9ECDB46B9DAB4687F34680533CA87</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>298ADD598EB9ECDB46B9DAB4687F34680533CA87</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CHZZSudoku</string>
+		</dict>
+	</array>
+</dict>
+</plist>
