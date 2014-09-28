@@ -29,42 +29,73 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    CGRect frame = self.view.frame;
+    
+    // set up start and restart buttons
+    CGFloat yButton = CGRectGetHeight(frame) * 0.9;
+    CGFloat xButtonStart = CGRectGetWidth(frame) * 0.2;
+    CGFloat xButtonRestart = CGRectGetWidth(frame) * 0.6;
+    CGFloat startButtonSize = xButtonStart;
+    
+    CGRect startFrame = CGRectMake(xButtonStart, yButton, startButtonSize, startButtonSize / 2);
+    UIButton* start = [[UIButton alloc] initWithFrame:startFrame];
+    [start setBackgroundColor:[UIColor grayColor]];
+    [start setTitle:@"Start new game" forState:UIControlStateNormal];
+    [self.view addSubview:start];
+    
+    [start addTarget:self action:@selector(startNewGame) forControlEvents:UIControlEventTouchUpInside];
+    
+    CGRect restartFrame = CGRectMake(xButtonRestart, yButton, startButtonSize, startButtonSize / 2);
+    UIButton* restart = [[UIButton alloc] initWithFrame:restartFrame];
+    [restart setBackgroundColor:[UIColor grayColor]];
+    [restart setTitle:@"Reset current game" forState:UIControlStateNormal];
+    [self.view addSubview:restart];
+    
+    [restart addTarget:self action:@selector(restartCurrentGame) forControlEvents:UIControlEventTouchUpInside];
     
     // initialize _gridModel
     _gridModel = [[CHZZGridModel alloc] init];
-    [_gridModel generateGrid];
     
-    // create gridFrame
+    // initilize _gridView
     float framePortion = 0.8;
-    CGRect frame = self.view.frame;
     CGFloat x    = CGRectGetWidth(frame) * (1 - framePortion) / 2;
     CGFloat y    = CGRectGetHeight(frame) * (1 - framePortion) / 2;
     CGFloat size = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)) * framePortion;
     CGRect gridFrame = CGRectMake(x, y, size, size);
     
-    // initialize _gridView and set initial values from initialGrid
     _gridView = [[CHZZGridView alloc] initWithFrame:gridFrame size:size];
+    [self.view addSubview:_gridView];
+    [_gridView setTarget:self action:@selector(gridCellSelectedAtRow:col:)];
+    
+    // initilize _numPadView
+    CGFloat numPadX = x;
+    CGFloat numPadY = size + 1.5 * y;
+    CGFloat numPadheight = size * 0.189; // the portion is calculated
+    CGRect numPadFrame = CGRectMake(numPadX, numPadY, size, numPadheight);
+    
+    _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
+    [self.view addSubview:_numPadView];
+    
+    [self startNewGame];
+}
+
+- (void)restartCurrentGame
+{
+    // empty all user's choices
     for (int row = 0; row < 9; row++) {
         for (int col = 0; col < 9; col++) {
             int value = _gridModel->initGrid[row][col];
             [_gridView setValueAtRow:row col:col to:value];
         }
     }
-    [self.view addSubview:_gridView];
-    
-    [_gridView setTarget:self action:@selector(gridCellSelectedAtRow:col:)];
-    
-    // create numPadFrame
-    CGFloat numPadX = x;
-    CGFloat numPadY = size + 1.5 * y;
-    CGFloat numPadheight = size * 0.189; // the portion is calculated
-    
-    CGRect numPadFrame = CGRectMake(numPadX, numPadY, size, numPadheight);
-    
-    // initialize _nunPadView
-    _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
-    [self.view addSubview:_numPadView];
 }
+
+- (void)startNewGame
+{
+    [_gridModel generateGrid];
+    [self restartCurrentGame];
+}
+
 
 - (void)gridCellSelectedAtRow:(NSNumber*)row col:(NSNumber*) col
 {
