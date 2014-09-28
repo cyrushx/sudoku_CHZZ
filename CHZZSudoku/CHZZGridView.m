@@ -52,7 +52,7 @@
             button.tag = row * 10 + col; // e.g: for the cell of row 2 col 7, the tag is 27
             [button setBackgroundColor:[UIColor whiteColor]];
             [button setBackgroundImage:[UIImage imageNamed:@"gray-highlight"] forState:UIControlStateHighlighted];
-            [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             
             [self addSubview:button];
             [rowArray addObject:button];
@@ -69,21 +69,45 @@
 - (void)setValueAtRow:(int)row col:(int)col to:(int)value
 {
     UIButton* button = _cells[row][col];
+    [button setBackgroundColor:[UIColor whiteColor]];
+    NSString* title = [NSString stringWithFormat:@"%d", value];
+    [button setTitle:title forState:UIControlStateNormal];
+}
+
+// the number of 0 is used to represent blank
+- (void)setDefaultValueAtRow:(int)row col:(int)col to:(int)value
+{
+    UIButton* button = _cells[row][col];
     if (value == 0) {
         [button setTitle:@"" forState:UIControlStateNormal];
     } else {
         NSString* title = [NSString stringWithFormat:@"%d", value];
         [button setTitle:title forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [button setEnabled:NO];
     }
 }
 
+
 - (void)cellSelected:(id)sender
 {
+    [self resetColor];
     UIButton* button = (UIButton*) sender;
+    [button setBackgroundColor:[UIColor blueColor]];
     int buttonTag = button.tag;
     int row = buttonTag / 10;
     int col = buttonTag % 10;
     [_target performSelector:_action withObject:[NSNumber numberWithInt:row] withObject:[NSNumber numberWithInt:col]];
+}
+
+- (void)resetColor
+{
+    for (int row = 0; row < 9; row++) {
+        for (int col = 0; col < 9; col++) {
+            UIButton* button = _cells[row][col];
+            [button setBackgroundColor:[UIColor whiteColor]];
+        }
+    }
 }
 
 - (void)setTarget:(id)target action:(SEL)action

@@ -12,12 +12,13 @@
 #import "CHZZGridModel.h"
 
 
-BOOL ASSISTON = NO;
-
 @interface CHZZViewController () {
     CHZZGridView* _gridView;
     CHZZNumpadView* _numPadView;
     CHZZGridModel* _gridModel;
+    int selectedRow;
+    int selectedCol;
+    int numpadEnable[9];
 }
 
 @end
@@ -70,49 +71,28 @@ BOOL ASSISTON = NO;
     [assist addTarget:self action:@selector(flip:) forControlEvents:UIControlEventValueChanged];
     
     // set up assist label
-    CGFloat xLabel = CGRectGetWidth(frame) * 0.43;
+    CGFloat xLabel = CGRectGetWidth(frame) * 0.40;
     CGFloat yLabel = CGRectGetHeight(frame) * 0.9;
     CGFloat labelSize = startButtonSize;
     CGRect labelFrame = CGRectMake(xLabel, yLabel, labelSize, labelSize/2);
     UILabel* label = [[UILabel alloc] initWithFrame:labelFrame];
-    [label setText:@"Assit On: "];
+    [label setText:@"ASSIST ON: "];
     [label setTextColor:[UIColor blackColor]];
     [self.view addSubview:label];
     
     
-    // initialize _gridModel
-    _gridModel = [[CHZZGridModel alloc] init];
-    
-    // initilize _gridView
-    float framePortion = 0.8;
-    CGFloat x    = CGRectGetWidth(frame) * (1 - framePortion) / 2;
-    CGFloat y    = CGRectGetHeight(frame) * (1 - framePortion) / 2;
-    CGFloat size = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)) * framePortion;
-    CGRect gridFrame = CGRectMake(x, y, size, size);
-    
-    _gridView = [[CHZZGridView alloc] initWithFrame:gridFrame size:size];
-    [self.view addSubview:_gridView];
-    [_gridView setTarget:self action:@selector(gridCellSelectedAtRow:col:)];
-    
-    // initilize _numPadView
-    CGFloat numPadX = x;
-    CGFloat numPadY = size + 1.5 * y;
-    CGFloat numPadheight = size * 0.189; // the portion is calculated
-    CGRect numPadFrame = CGRectMake(numPadX, numPadY, size, numPadheight);
-    
-    _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
-    [self.view addSubview:_numPadView];
-    
+
     [self startNewGame];
 }
 
 - (void)resetCurrentGame
 {
+    
     // empty all user's choices
     for (int row = 0; row < 9; row++) {
         for (int col = 0; col < 9; col++) {
             int value = _gridModel->initGrid[row][col];
-            [_gridView setValueAtRow:row col:col to:value];
+            [_gridView setDefaultValueAtRow:row col:col to:value];
         }
     }
 }
@@ -121,9 +101,36 @@ BOOL ASSISTON = NO;
 {
     // generate a new grid and reset the game
     [_gridModel generateGrid];
+    [_numPadView setAssist:NO];
     [self resetCurrentGame];
 }
 
+- (void)numpadCheckAtRow:(int)row Col:(int)col
+{
+    for(int i = 0; i < 9; i++){
+        int numpadVal = i + 1;
+
+        if([_gridModel isMutableAtRow:row colum:col]){
+            
+            if([_gridModel isConsistentAtRow:row colum:col for:numpadVal])
+                numpadEnable[i] = 1;
+            else
+                numpadEnable[i] = 0;
+        } else{
+            numpadEnable[i] = 0;
+        }
+    }
+    [_numPadView setEnableWithArray:numpadEnable];
+    
+}
+
+- (void)numPadSelected:(NSNumber*)value
+{
+    int v = [value intValue];
+    [_gridModel setValueAtRow:selectedRow colum:selectedCol to:v];
+    [_gridView setValueAtRow:selectedRow col:selectedCol to:v];
+    [self numpadCheckAtRow:selectedRow Col:selectedCol];
+}
 
 - (void)gridCellSelectedAtRow:(NSNumber*)row col:(NSNumber*) col
 {
@@ -131,32 +138,23 @@ BOOL ASSISTON = NO;
     NSLog(@"The button is pressed, with row %@ and col %@", row, col);
     
     // convert row and col to int
-    int r = [row intValue];
-    int c = [col intValue];
+    selectedRow = [row intValue];
+    selectedCol = [col intValue];
     
     // check mutability and consistence of the selected space
-    if([_gridModel isMutableAtRow:r colum:c]){
-        // ask numPadView for the current value
-        int value = [_numPadView getCurrentValue];
-       
-        // set values to gridModel and gridView
-        if([_gridModel isConsistentAtRow:r colum:c for:value]){
-            [_gridModel setValueAtRow:r colum:c to:value];
-            [_gridView setValueAtRow:r col:c to:value];
-        }
-    }
-    
+    [self numpadCheckAtRow:selectedRow Col:selectedCol];
 }
 
 - (IBAction)flip:(id)sender {
     UISwitch* assist = (UISwitch*) sender;
+    NSLog(@"is :%hhd",assist.on);
     if (assist.on)
     {
-        ASSISTON = YES;
+        [_numPadView setAssist:YES];
     }
     else
     {
-        ASSISTON = NO;
+        [_numPadView setAssist:NO];
     }
 }
 

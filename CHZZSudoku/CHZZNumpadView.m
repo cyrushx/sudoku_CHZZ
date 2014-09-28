@@ -12,6 +12,7 @@
     id _target;
     SEL _action;
     int _currentValue;
+    BOOL assistOn;
 }
 @end
 
@@ -61,16 +62,45 @@
     return self;
 }
 
+-(void)setAssist:(BOOL)assist
+{
+    assistOn = assist;
+}
+
+-(void)setEnableWithArray:(int[])array
+{
+    for(int i = 0; i<9; i++){
+        [_cells[i] setBackgroundColor:[UIColor whiteColor]];
+        
+        if(array[i] == 0){
+            [_cells[i] setTag:0];
+            if(assistOn) [_cells[i] setBackgroundColor:[UIColor grayColor]];
+        }else{
+            [_cells[i] setTag:1];
+        }
+    }
+}
+
 - (void)cellSelected:(id)sender
 {
     UIButton* button = (UIButton*) sender;
-    _currentValue = [[button currentTitle] integerValue];
-    [self getCurrentValue];
+    
+    if([sender tag] == 1){
+        _currentValue = [[button currentTitle] integerValue];
+        //[self getCurrentValue];
+        [_target performSelector:_action withObject:[NSNumber numberWithInt:_currentValue]];
+    }
 }
 
 - (int)getCurrentValue
 {
     return _currentValue;
+}
+
+- (void)setTarget:(id)target action:(SEL)action
+{
+    _target = target;
+    _action = action;
 }
 
 @end
