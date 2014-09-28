@@ -20,7 +20,7 @@
 - (id) initWithFrame:(CGRect)frame length:(CGFloat) length
 {
     self  = [super initWithFrame:frame];
-    self.backgroundColor = [UIColor blueColor];
+    self.backgroundColor = [UIColor colorWithWhite:1 alpha:0.5];
     
     // calculate the size of the spacing between cells and blocks, and button size
     float cellSeparatorPortion = 1 / 80.0;

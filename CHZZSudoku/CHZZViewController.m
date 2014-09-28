@@ -28,30 +28,37 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     CGRect frame = self.view.frame;
     
-    // set up start and restart buttons
+    // set up start and reset buttons
     CGFloat yButton = CGRectGetHeight(frame) * 0.9;
     CGFloat xButtonStart = CGRectGetWidth(frame) * 0.2;
-    CGFloat xButtonRestart = CGRectGetWidth(frame) * 0.6;
     CGFloat startButtonSize = xButtonStart;
+    CGFloat xButtonReset = (xButtonStart * 2 + startButtonSize);
+    CGFloat resetButtonSize = startButtonSize;
     
     CGRect startFrame = CGRectMake(xButtonStart, yButton, startButtonSize, startButtonSize / 2);
     UIButton* start = [[UIButton alloc] initWithFrame:startFrame];
-    [start setBackgroundColor:[UIColor grayColor]];
-    [start setTitle:@"Start new game" forState:UIControlStateNormal];
+    start.layer.cornerRadius = 20;
+    start.layer.borderWidth = 1.0f;
+    [start setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.7]];
+    [start setTitle:@"Start" forState:UIControlStateNormal];
+    [start setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    start.titleLabel.font = [UIFont systemFontOfSize:30];
     [self.view addSubview:start];
-    
     [start addTarget:self action:@selector(startNewGame) forControlEvents:UIControlEventTouchUpInside];
     
-    CGRect restartFrame = CGRectMake(xButtonRestart, yButton, startButtonSize, startButtonSize / 2);
-    UIButton* restart = [[UIButton alloc] initWithFrame:restartFrame];
-    [restart setBackgroundColor:[UIColor grayColor]];
-    [restart setTitle:@"Reset current game" forState:UIControlStateNormal];
-    [self.view addSubview:restart];
-    
-    [restart addTarget:self action:@selector(restartCurrentGame) forControlEvents:UIControlEventTouchUpInside];
+    CGRect resetFrame = CGRectMake(xButtonReset, yButton, resetButtonSize, resetButtonSize / 2);
+    UIButton* reset = [[UIButton alloc] initWithFrame:resetFrame];
+    reset.layer.cornerRadius = 20;
+    reset.layer.borderWidth = 1.0f;
+    [reset setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.7]];
+    [reset setTitle:@"Reset" forState:UIControlStateNormal];
+    [reset setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    reset.titleLabel.font = [UIFont systemFontOfSize:30];
+    [self.view addSubview:reset];
+    [reset addTarget:self action:@selector(resetCurrentGame) forControlEvents:UIControlEventTouchUpInside];
     
     // initialize _gridModel
     _gridModel = [[CHZZGridModel alloc] init];
@@ -79,7 +86,7 @@
     [self startNewGame];
 }
 
-- (void)restartCurrentGame
+- (void)resetCurrentGame
 {
     // empty all user's choices
     for (int row = 0; row < 9; row++) {
@@ -92,8 +99,9 @@
 
 - (void)startNewGame
 {
+    // generate a new grid and reset the game
     [_gridModel generateGrid];
-    [self restartCurrentGame];
+    [self resetCurrentGame];
 }
 
 

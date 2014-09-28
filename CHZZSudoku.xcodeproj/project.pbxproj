@@ -41,6 +41,9 @@
 		A8A984F319CA54D700D3DAE3 /* CHZZGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */; };
 		A8AD8E8519D87D3800791B9A /* grid1.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8319D87D3800791B9A /* grid1.txt */; };
 		A8AD8E8619D87D3800791B9A /* grid2.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8419D87D3800791B9A /* grid2.txt */; };
+		A8AD8E8A19D89ACD00791B9A /* landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8919D89ACD00791B9A /* landscape.jpg */; };
+		A8AD8E8C19D8A3D600791B9A /* landscape2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */; };
+		A8AD8E8E19D8A5B000791B9A /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8D19D8A5B000791B9A /* bg.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZZGridView.m; sourceTree = "<group>"; };
 		A8AD8E8319D87D3800791B9A /* grid1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = grid1.txt; path = ../../../../../../Downloads/grid1.txt; sourceTree = "<group>"; };
 		A8AD8E8419D87D3800791B9A /* grid2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = grid2.txt; path = ../../../../../../Downloads/grid2.txt; sourceTree = "<group>"; };
+		A8AD8E8919D89ACD00791B9A /* landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = landscape.jpg; path = ../../../../../Pictures/landscape.jpg; sourceTree = "<group>"; };
+		A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = landscape2.jpg; path = ../../../../../Pictures/landscape2.jpg; sourceTree = "<group>"; };
+		A8AD8E8D19D8A5B000791B9A /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = ../../../../../Pictures/bg.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +168,9 @@
 		A8A984C019CA545300D3DAE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A8AD8E8D19D8A5B000791B9A /* bg.jpg */,
+				A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */,
+				A8AD8E8919D89ACD00791B9A /* landscape.jpg */,
 				A8AD8E8319D87D3800791B9A /* grid1.txt */,
 				A8AD8E8419D87D3800791B9A /* grid2.txt */,
 				A8A984C119CA545300D3DAE3 /* CHZZSudoku-Info.plist */,
@@ -269,8 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A984D019CA545300D3DAE3 /* Main_iPad.storyboard in Resources */,
+				A8AD8E8E19D8A5B000791B9A /* bg.jpg in Resources */,
 				A8AD8E8519D87D3800791B9A /* grid1.txt in Resources */,
+				A8AD8E8C19D8A3D600791B9A /* landscape2.jpg in Resources */,
 				A8A984D519CA545300D3DAE3 /* Images.xcassets in Resources */,
+				A8AD8E8A19D89ACD00791B9A /* landscape.jpg in Resources */,
 				A8AD8E8619D87D3800791B9A /* grid2.txt in Resources */,
 				A8A984CD19CA545300D3DAE3 /* Main_iPhone.storyboard in Resources */,
 				A8A984C419CA545300D3DAE3 /* InfoPlist.strings in Resources */,

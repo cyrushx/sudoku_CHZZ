@@ -20,7 +20,7 @@
 - (id) initWithFrame:(CGRect)frame size:(CGFloat) frameSize {
     
     self = [super initWithFrame:frame];
-    self.backgroundColor = [UIColor blackColor];
+    self.backgroundColor = [UIColor clearColor];
     
     // calculate the size of the spacing between cells and blocks
     float cellSeparatorPortion  = 1 / 80.0;
@@ -52,7 +52,7 @@
             button.tag = row * 10 + col; // e.g: for the cell of row 2 col 7, the tag is 27
             [button setBackgroundColor:[UIColor whiteColor]];
             [button setBackgroundImage:[UIImage imageNamed:@"gray-highlight"] forState:UIControlStateHighlighted];
-            [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
             
             [self addSubview:button];
             [rowArray addObject:button];
