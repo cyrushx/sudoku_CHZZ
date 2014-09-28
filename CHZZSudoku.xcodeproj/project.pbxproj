@@ -6,7 +6,23 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		A8A9853819CBB71B00D3DAE3 /* OCLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A8A9853B19CBB71B00D3DAE3 /* Build configuration list for PBXAggregateTarget "OCLint" */;
+			buildPhases = (
+				A8A9853C19CBB73D00D3DAE3 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = OCLint;
+			productName = OCLint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		A8590ABA19CF95CE001CF7FA /* CHZZGridModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8590AB919CF95CE001CF7FA /* CHZZGridModel.m */; };
+		A8590ABD19CF9635001CF7FA /* CHZZNumpadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8590ABC19CF9635001CF7FA /* CHZZNumpadView.m */; };
 		A8A984BA19CA545300D3DAE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A984B919CA545300D3DAE3 /* Foundation.framework */; };
 		A8A984BC19CA545300D3DAE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A984BB19CA545300D3DAE3 /* CoreGraphics.framework */; };
 		A8A984BE19CA545300D3DAE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A984BD19CA545300D3DAE3 /* UIKit.framework */; };
@@ -36,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A8590AB819CF95CE001CF7FA /* CHZZGridModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHZZGridModel.h; sourceTree = "<group>"; };
+		A8590AB919CF95CE001CF7FA /* CHZZGridModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZZGridModel.m; sourceTree = "<group>"; };
+		A8590ABB19CF9635001CF7FA /* CHZZNumpadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHZZNumpadView.h; sourceTree = "<group>"; };
+		A8590ABC19CF9635001CF7FA /* CHZZNumpadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZZNumpadView.m; sourceTree = "<group>"; };
 		A8A984B619CA545300D3DAE3 /* CHZZSudoku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CHZZSudoku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A984B919CA545300D3DAE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A8A984BB19CA545300D3DAE3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -125,6 +145,10 @@
 				A8A984F119CA54D700D3DAE3 /* CHZZGridView.h */,
 				A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */,
 				A8A984D219CA545300D3DAE3 /* CHZZViewController.m */,
+				A8590AB819CF95CE001CF7FA /* CHZZGridModel.h */,
+				A8590AB919CF95CE001CF7FA /* CHZZGridModel.m */,
+				A8590ABB19CF9635001CF7FA /* CHZZNumpadView.h */,
+				A8590ABC19CF9635001CF7FA /* CHZZNumpadView.m */,
 				A8A984D419CA545300D3DAE3 /* Images.xcassets */,
 				A8A984C019CA545300D3DAE3 /* Supporting Files */,
 			);
@@ -228,6 +252,7 @@
 			targets = (
 				A8A984B519CA545300D3DAE3 /* CHZZSudoku */,
 				A8A984D919CA545300D3DAE3 /* CHZZSudokuTests */,
+				A8A9853819CBB71B00D3DAE3 /* OCLint */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +279,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A8A9853C19CBB73D00D3DAE3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source ~/.bash_profile\n\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\n\n\ncd ${TARGET_TEMP_DIR}\nif [ ! -f compile_commands.json ]; then\necho \"[*] compile_commands.json not found, possibly clean was performed\"\necho \"[*] starting xcodebuild to rebuild the project..\"\n# clean previous output\nif [ -f xcodebuild.log ]; then\nrm xcodebuild.log\nfi\n\ncd ${SRCROOT}\nxcodebuild clean\n\n#build xcodebuild.log\nxcodebuild | tee ${TARGET_TEMP_DIR}/xcodebuild.log\n#xcodebuild <options>| tee ${TARGET_TEMP_DIR}/xcodebuild.log\n\necho \"[*] transforming xcodebuild.log into compile_commands.json...\"\ncd ${TARGET_TEMP_DIR}\n#transform it into compile_commands.json\noclint-xcodebuild\n\necho \"[*] copy compile_commands.json to the project root...\"\ncp ${TARGET_TEMP_DIR}/compile_commands.json ${SRCROOT}/compile_commands.json\nfi\n\necho \"[*] starting analyzing\"\ncd ${TARGET_TEMP_DIR}\noclint-json-compilation-database | sed 's/\\(.*\\.\\m\\{1,2\\}:[0-9]*:[0-9]*:\\)/\\1 warning:/'";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A8A984B219CA545300D3DAE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -262,6 +303,8 @@
 				A8A984C619CA545300D3DAE3 /* main.m in Sources */,
 				A8A984F319CA54D700D3DAE3 /* CHZZGridView.m in Sources */,
 				A8A984CA19CA545300D3DAE3 /* CHZZAppDelegate.m in Sources */,
+				A8590ABA19CF95CE001CF7FA /* CHZZGridModel.m in Sources */,
+				A8590ABD19CF9635001CF7FA /* CHZZNumpadView.m in Sources */,
 				A8A984D319CA545300D3DAE3 /* CHZZViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +501,20 @@
 			};
 			name = Release;
 		};
+		A8A9853919CBB71B00D3DAE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A8A9853A19CBB71B00D3DAE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -477,6 +534,7 @@
 				A8A984ED19CA545300D3DAE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8A984EE19CA545300D3DAE3 /* Build configuration list for PBXNativeTarget "CHZZSudokuTests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +543,16 @@
 				A8A984F019CA545300D3DAE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8A9853B19CBB71B00D3DAE3 /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8A9853919CBB71B00D3DAE3 /* Debug */,
+				A8A9853A19CBB71B00D3DAE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

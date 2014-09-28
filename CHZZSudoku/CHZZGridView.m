@@ -45,12 +45,12 @@
             // calculate the coordinate of the top left corner of the button
             CGFloat x = blockSepLeftNum * blockSeparatorWidth + cellSepLeftNum * cellSeparatorWidth + col * buttonSize;
             CGFloat y = blockSepTopNum * blockSeparatorWidth  + cellSepTopNum * cellSeparatorWidth  + row * buttonSize;
-
+            
             // create button and assign property for the button
             CGRect buttonFrame = CGRectMake(x, y, buttonSize, buttonSize);
             UIButton* button = [[UIButton alloc] initWithFrame:buttonFrame];
             button.tag = row * 10 + col; // e.g: for the cell of row 2 col 7, the tag is 27
-            button.backgroundColor = [UIColor whiteColor];
+            [button setBackgroundColor:[UIColor whiteColor]];
             [button setBackgroundImage:[UIImage imageNamed:@"gray-highlight"] forState:UIControlStateHighlighted];
             [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
             
@@ -66,7 +66,8 @@
 }
 
 // the number of 0 is used to represent blank
-- (void)setValueAtRow:(int)row col:(int)col to:(int)value {
+- (void)setValueAtRow:(int)row col:(int)col to:(int)value
+{
     UIButton* button = _cells[row][col];
     if (value == 0) {
         [button setTitle:@"" forState:UIControlStateNormal];

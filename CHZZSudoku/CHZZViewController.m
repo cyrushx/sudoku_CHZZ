@@ -8,6 +8,8 @@
 
 #import "CHZZViewController.h"
 #import "CHZZGridView.h"
+#import "CHZZNumpadView.h"
+#import "CHZZGridModel.h"
 
 // For now, the initial grid is hardcoded
 int initialGrid[9][9]={
@@ -24,6 +26,8 @@ int initialGrid[9][9]={
 
 @interface CHZZViewController () {
     CHZZGridView* _gridView;
+    CHZZNumpadView* _numPadView;
+    CHZZGridModel* _gridModel;
 }
 
 @end
@@ -36,7 +40,11 @@ int initialGrid[9][9]={
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    // create frame
+    // initialize _gridModel
+    _gridModel = [[CHZZGridModel alloc] init];
+    
+    
+    // create gridFrame
     float framePortion = 0.8;
     CGRect frame = self.view.frame;
     CGFloat x    = CGRectGetWidth(frame) * (1 - framePortion) / 2;
@@ -44,7 +52,7 @@ int initialGrid[9][9]={
     CGFloat size = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)) * framePortion;
     CGRect gridFrame = CGRectMake(x, y, size, size);
     
-    // Initialize _gridView and set initial values from initialGrid
+    // initialize _gridView and set initial values from initialGrid
     _gridView = [[CHZZGridView alloc] initWithFrame:gridFrame size:size];
     for (int row = 0; row < 9; row++) {
         for (int col = 0; col < 9; col++) {
@@ -55,12 +63,40 @@ int initialGrid[9][9]={
     [self.view addSubview:_gridView];
     
     [_gridView setTarget:self action:@selector(gridCellSelectedAtRow:col:)];
+    
+    // create numPadFrame
+    CGFloat numPadX = x;
+    CGFloat numPadY = size + 1.5 * y;
+    CGFloat numPadheight = size * 0.189; // the portion is calculated
+    
+    CGRect numPadFrame = CGRectMake(numPadX, numPadY, size, numPadheight);
+    
+    // initialize _nunPadView
+    _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
+    [self.view addSubview:_numPadView];
 }
 
 - (void)gridCellSelectedAtRow:(NSNumber*)row col:(NSNumber*) col
 {
-    // For now, simply display row and col info of the cell selected
+    // The message is for debug use
     NSLog(@"The button is pressed, with row %@ and col %@", row, col);
+    
+    // convert row and col to int
+    int r = [row intValue];
+    int c = [col intValue];
+    
+    // check mutability and consistence of the selected space
+    if([_gridModel isMutableAtRow:r colum:c]){
+        // ask numPadView for the current value
+        int value = [_numPadView getCurrentValue];
+       
+        // set values to gridModel and gridView
+        if([_gridModel isConsistentAtRow:r colum:c for:value]){
+            [_gridModel setValueAtRow:r colum:c to:value];
+            [_gridView setValueAtRow:r col:c to:value];
+        }
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
