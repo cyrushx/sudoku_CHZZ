@@ -15,6 +15,8 @@
 }
 
 -(void) generateGrid;
+-(NSString*) readString:(NSString*) fileName;
+-(void) parseString:(NSString*) gridString;
 -(void) resetMutableArray;
 -(int) getValueAtRow:(int)row colum:(int)colum;
 -(void) setValueAtRow:(int)row colum:(int)colum to:(int)to;

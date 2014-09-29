@@ -15,20 +15,27 @@ int mutableGridCopy[9][9];
 int initGrid[9][9];
 
 @implementation CHZZGridModel
-{
-    bool debug;
-}
 
 -(void) generateGrid
 {
     // randomly choose between grid1.txt and grid2.txt
-    NSString* path;
+    NSString* fileName;
     NSInteger fileNum = arc4random() % 1;
     if (fileNum == 0)
-        path = [[NSBundle mainBundle] pathForResource:@"grid1" ofType:@"txt"];
+        fileName = @"grid1";
+        // path = [[NSBundle mainBundle] pathForResource:@"grid1" ofType:@"txt"];
     else
-        path = [[NSBundle mainBundle] pathForResource:@"grid2" ofType:@"txt"];
+        fileName = @"grid2";
+        // path = [[NSBundle mainBundle] pathForResource:@"grid2" ofType:@"txt"];
     
+    NSString* gridString =[self readString:fileName];
+    [self parseString:gridString];
+}
+
+-(NSString*) readString:(NSString*) fileName
+{
+    // genearte path and read the string
+    NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"txt"];
     NSError* error;
     
     NSString* readString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
@@ -39,12 +46,15 @@ int initGrid[9][9];
     // find how many grids are stored in text file
     NSInteger gridNum  = stringLength / gridLength;
     NSInteger gridLine = arc4random() % gridNum;
-    //NSInteger gridLine = 2;
     NSInteger start = gridLine * gridLength;
     
     NSString* gridString = [readString substringWithRange:NSMakeRange(start, gridLength - 1)];
-    
-    // generate grid
+    return gridString;
+}
+
+-(void) parseString:(NSString*) gridString
+{
+    // parse the string and add it to the grid
     for (NSInteger row = 0; row < 9; row++)
     {
         for (NSInteger col = 0; col < 9; col++)
@@ -53,8 +63,9 @@ int initGrid[9][9];
             initGrid[row][col] = [value intValue];
         }
     }
-    
 }
+
+
 
 -(void) resetMutableArray
 {

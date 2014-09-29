@@ -59,6 +59,7 @@
 		A8AD8EAB19D8EEF400791B9A /* ipad spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9F19D8EEF400791B9A /* ipad spotlight@2x.png */; };
 		A8AD8EAC19D8EEF400791B9A /* iphone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */; };
 		A8AD8EAD19D8EEF400791B9A /* iphone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */; };
+		A8AD8EB019D8FE8B00791B9A /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EAF19D8FE8B00791B9A /* test.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		A8AD8E9F19D8EEF400791B9A /* ipad spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad spotlight@2x.png"; sourceTree = "<group>"; };
 		A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone app@2x.png"; sourceTree = "<group>"; };
 		A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone app@3x.png"; sourceTree = "<group>"; };
+		A8AD8EAF19D8FE8B00791B9A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test.txt; path = ../../../../../../Downloads/test.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				A8AD8E8D19D8A5B000791B9A /* bg.jpg */,
 				A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */,
 				A8AD8E8919D89ACD00791B9A /* landscape.jpg */,
+				A8AD8EAF19D8FE8B00791B9A /* test.txt */,
 				A8AD8E8319D87D3800791B9A /* grid1.txt */,
 				A8AD8E8419D87D3800791B9A /* grid2.txt */,
 				A8A984C119CA545300D3DAE3 /* CHZZSudoku-Info.plist */,
@@ -353,6 +356,7 @@
 				A8AD8EA219D8EEF400791B9A /* Icon-40@2x.png in Resources */,
 				A8A984CD19CA545300D3DAE3 /* Main_iPhone.storyboard in Resources */,
 				A8A984C419CA545300D3DAE3 /* InfoPlist.strings in Resources */,
+				A8AD8EB019D8FE8B00791B9A /* test.txt in Resources */,
 				A8AD8EA419D8EEF400791B9A /* Icon-Small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

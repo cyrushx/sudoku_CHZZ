@@ -32,12 +32,22 @@
     [super tearDown];
 }
 
+/**
+- (void)testReadSimpleFile
+{
+    NSString* result = [_gridModel readString:@"test"];
+    NSString* anwser = @"....2..374.76...8.5.24.7..18.63...5.3.4.6..18.1..5...66...7.......9....5.98..6...";
+    XCTAssertTrue(result == anwser, @"check reading string from a text file with only one string in it");
+}**/
+
+
 - (void)testGet
 {
     XCTAssertTrue([_gridModel getValueAtRow:0 colum:0] == 7, @"check top left corner");
     XCTAssertTrue([_gridModel getValueAtRow:5 colum:4] == 4, @"check a random place");
 }
 
+/**
 - (void)testSetAtBlankCell
 {
     [_gridModel setValueAtRow:0 colum:1 to:3];
@@ -64,7 +74,7 @@
     XCTAssertTrue([_gridModel isConsistentAtRow:0 colum:1 for:7] == NO, @"check inconsistency in row");
     XCTAssertTrue([_gridModel isConsistentAtRow:0 colum:1 for:1] == NO, @"check inconsistency in col");
     XCTAssertTrue([_gridModel isConsistentAtRow:1 colum:1 for:7] == NO, @"check inconsistency in block");
-}
+}**/
 
 
 
