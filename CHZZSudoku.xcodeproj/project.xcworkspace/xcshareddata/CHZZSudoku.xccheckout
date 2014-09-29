@@ -12,6 +12,8 @@
 	<dict>
 		<key>298ADD598EB9ECDB46B9DAB4687F34680533CA87</key>
 		<string>https://github.com/cyrushx/sudoku_CHZZ.git</string>
+		<key>AFA943C6AA1E6BFA50B8A9A398CB6F5E03F83BEF</key>
+		<string>https://github.com/cyrushx/sudoku_CHVF.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>CHZZSudoku.xcodeproj/project.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>298ADD598EB9ECDB46B9DAB4687F34680533CA87</key>
 		<string>../..</string>
+		<key>AFA943C6AA1E6BFA50B8A9A398CB6F5E03F83BEF</key>
+		<string>../../../sudoku</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/cyrushx/sudoku_CHZZ.git</string>
@@ -35,6 +39,14 @@
 			<string>298ADD598EB9ECDB46B9DAB4687F34680533CA87</string>
 			<key>IDESourceControlWCCName</key>
 			<string>CHZZSudoku</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AFA943C6AA1E6BFA50B8A9A398CB6F5E03F83BEF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sudoku</string>
 		</dict>
 	</array>
 </dict>

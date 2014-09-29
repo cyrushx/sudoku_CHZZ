@@ -49,7 +49,7 @@
         CGRect buttonFrame = CGRectMake(x, buttonY, buttonSize, buttonSize);
         UIButton* button = [[UIButton alloc] initWithFrame:buttonFrame];
         [button setBackgroundColor:[UIColor whiteColor]];
-        [button setBackgroundImage:[UIImage imageNamed:@"gray-highlight"] forState:UIControlStateHighlighted];
+        [button setBackgroundImage:[UIImage imageNamed:@"gray-highlight.png"] forState:UIControlStateHighlighted];
         [button setTitle:[NSString stringWithFormat:@"%d", titleNum] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
