@@ -94,7 +94,7 @@
 {
     [self resetColor];
     UIButton* button = (UIButton*) sender;
-    [button setBackgroundColor:[UIColor blueColor]];
+    [button setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
     int buttonTag = button.tag;
     int row = buttonTag / 10;
     int col = buttonTag % 10;

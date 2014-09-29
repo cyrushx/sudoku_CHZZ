@@ -114,6 +114,10 @@
 
 - (void)resetCurrentGame
 {
+    [_numPadView resetColor];
+    [_gridView resetColor];
+    [_gridModel resetMutableArray];
+    
     // empty all user's choices
     for (int row = 0; row < 9; row++) {
         for (int col = 0; col < 9; col++) {
@@ -121,8 +125,6 @@
             [_gridView setDefaultValueAtRow:row col:col to:value];
         }
     }
-    
-    [_gridModel resetMutableArray];
 }
 
 - (void)startNewGame
@@ -130,8 +132,6 @@
     // generate a new grid and reset the game
     [_gridModel generateGrid];
     [_numPadView setAssist:ASSISTON];
-    [_numPadView resetColor];
-    [_gridView resetColor];
     [self resetCurrentGame];
 }
 

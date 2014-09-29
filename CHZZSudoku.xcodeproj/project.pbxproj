@@ -44,6 +44,8 @@
 		A8AD8E8A19D89ACD00791B9A /* landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8919D89ACD00791B9A /* landscape.jpg */; };
 		A8AD8E8C19D8A3D600791B9A /* landscape2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */; };
 		A8AD8E8E19D8A5B000791B9A /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8D19D8A5B000791B9A /* bg.jpg */; };
+		A8AD8E9119D8DBC700791B9A /* Apps-Sudoku-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */; };
+		A8AD8E9219D8DBC700791B9A /* sudoku-icon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		A8AD8E8919D89ACD00791B9A /* landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = landscape.jpg; path = ../../../../../Pictures/landscape.jpg; sourceTree = "<group>"; };
 		A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = landscape2.jpg; path = ../../../../../Pictures/landscape2.jpg; sourceTree = "<group>"; };
 		A8AD8E8D19D8A5B000791B9A /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = ../../../../../Pictures/bg.jpg; sourceTree = "<group>"; };
+		A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Apps-Sudoku-icon.png"; path = "../../../../../Pictures/Apps-Sudoku-icon.png"; sourceTree = "<group>"; };
+		A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sudoku-icon_2x.png"; path = "../../../../../Pictures/sudoku-icon_2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,8 @@
 		A8A984C019CA545300D3DAE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */,
+				A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */,
 				A8AD8E8D19D8A5B000791B9A /* bg.jpg */,
 				A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */,
 				A8AD8E8919D89ACD00791B9A /* landscape.jpg */,
@@ -278,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A984D019CA545300D3DAE3 /* Main_iPad.storyboard in Resources */,
+				A8AD8E9219D8DBC700791B9A /* sudoku-icon_2x.png in Resources */,
+				A8AD8E9119D8DBC700791B9A /* Apps-Sudoku-icon.png in Resources */,
 				A8AD8E8E19D8A5B000791B9A /* bg.jpg in Resources */,
 				A8AD8E8519D87D3800791B9A /* grid1.txt in Resources */,
 				A8AD8E8C19D8A3D600791B9A /* landscape2.jpg in Resources */,
