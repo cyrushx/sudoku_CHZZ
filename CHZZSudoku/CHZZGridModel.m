@@ -15,6 +15,9 @@ int mutableGridCopy[9][9];
 int initGrid[9][9];
 
 @implementation CHZZGridModel
+{
+    bool debug;
+}
 
 -(void) generateGrid
 {
@@ -40,9 +43,6 @@ int initGrid[9][9];
     NSInteger start = gridLine * gridLength;
     
     NSString* gridString = [readString substringWithRange:NSMakeRange(start, gridLength - 1)];
-    
-    NSLog(@"Length of file: %d", [readString length]);
-    NSLog(@"The found string: %@", gridString);
     
     // generate grid
     for (NSInteger row = 0; row < 9; row++)

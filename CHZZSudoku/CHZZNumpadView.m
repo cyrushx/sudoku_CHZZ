@@ -30,14 +30,14 @@
     CGFloat cellSeparatorWidth = length * cellSeparatorPortion;
     CGFloat blockSeparatorWidth = length * blockSeparatorPortion;
     
-    CGFloat buttonSize = (length - (blockSeparatorWidth * 2) - (cellSeparatorWidth * 8))/9.0;
+    CGFloat buttonSize = (length - (blockSeparatorWidth * 2) - (cellSeparatorWidth * 9))/10.0;
     
     // set up cells
     _cells = [[NSMutableArray alloc] init];
     
     CGFloat buttonY = blockSeparatorWidth;
     int titleNum;
-    for (int col = 0; col < 9; col++)
+    for (int col = 0; col < 10; col++)
     {
         int cellSepLeftNum = col;
         titleNum = col + 1;
@@ -50,7 +50,13 @@
         UIButton* button = [[UIButton alloc] initWithFrame:buttonFrame];
         [button setBackgroundColor:[UIColor whiteColor]];
         [button setBackgroundImage:[UIImage imageNamed:@"gray-highlight.png"] forState:UIControlStateHighlighted];
-        [button setTitle:[NSString stringWithFormat:@"%d", titleNum] forState:UIControlStateNormal];
+        if (titleNum==10){
+            [button setTitle:@"⬅︎" forState:UIControlStateNormal];
+            [button setTag:2];
+        }else{
+            [button setTitle:[NSString stringWithFormat:@"%d", titleNum] forState:UIControlStateNormal];
+
+        }
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         
         [self addSubview:button];
@@ -95,6 +101,8 @@
         _currentValue = [[button currentTitle] integerValue];
         //[self getCurrentValue];
         [_target performSelector:_action withObject:[NSNumber numberWithInt:_currentValue]];
+    }else if([sender tag] == 2){
+        [_target performSelector:_action withObject:[NSNumber numberWithInt:0]];
     }
 }
 

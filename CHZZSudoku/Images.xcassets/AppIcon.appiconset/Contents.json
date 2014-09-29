@@ -3,61 +3,61 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "sudoku-icon_2x.png",
+      "filename" : "Icon-Small@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "sudoku-icon_2x-1.png",
+      "filename" : "Icon-40@2x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "sudoku-icon_2x-2.png",
+      "filename" : "iphone app@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "sudoku-icon_2x-3.png",
+      "filename" : "iphone app@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "sudoku-icon_2x-4.png",
+      "filename" : "ipad settings 1x.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "sudoku-icon_2x-5.png",
+      "filename" : "ipad settings@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "sudoku-icon_2x-6.png",
+      "filename" : "ipad spotlight @1x.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "sudoku-icon_2x-7.png",
+      "filename" : "ipad spotlight@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "sudoku-icon_2x-8.png",
+      "filename" : "ipad app@1x-1.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "sudoku-icon_2x-9.png",
+      "filename" : "ipad app@2x-1.png",
       "scale" : "2x"
     }
   ],

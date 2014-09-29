@@ -47,6 +47,18 @@
 		A8AD8E9119D8DBC700791B9A /* Apps-Sudoku-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */; };
 		A8AD8E9219D8DBC700791B9A /* sudoku-icon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */; };
 		A8AD8E9419D8DDEC00791B9A /* gray-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9319D8DDEC00791B9A /* gray-highlight.png */; };
+		A8AD8EA219D8EEF400791B9A /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9619D8EEF400791B9A /* Icon-40@2x.png */; };
+		A8AD8EA319D8EEF400791B9A /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9719D8EEF400791B9A /* Icon-60@2x.png */; };
+		A8AD8EA419D8EEF400791B9A /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9819D8EEF400791B9A /* Icon-Small@2x.png */; };
+		A8AD8EA519D8EEF400791B9A /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9919D8EEF400791B9A /* Icon-Small@3x.png */; };
+		A8AD8EA619D8EEF400791B9A /* ipad app@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9A19D8EEF400791B9A /* ipad app@1x.png */; };
+		A8AD8EA719D8EEF400791B9A /* ipad app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9B19D8EEF400791B9A /* ipad app@2x.png */; };
+		A8AD8EA819D8EEF400791B9A /* ipad settings 1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9C19D8EEF400791B9A /* ipad settings 1x.png */; };
+		A8AD8EA919D8EEF400791B9A /* ipad settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9D19D8EEF400791B9A /* ipad settings@2x.png */; };
+		A8AD8EAA19D8EEF400791B9A /* ipad spotlight @1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9E19D8EEF400791B9A /* ipad spotlight @1x.png */; };
+		A8AD8EAB19D8EEF400791B9A /* ipad spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9F19D8EEF400791B9A /* ipad spotlight@2x.png */; };
+		A8AD8EAC19D8EEF400791B9A /* iphone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */; };
+		A8AD8EAD19D8EEF400791B9A /* iphone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +106,18 @@
 		A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Apps-Sudoku-icon.png"; path = "../../../../../Pictures/Apps-Sudoku-icon.png"; sourceTree = "<group>"; };
 		A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sudoku-icon_2x.png"; path = "../../../../../Pictures/sudoku-icon_2x.png"; sourceTree = "<group>"; };
 		A8AD8E9319D8DDEC00791B9A /* gray-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray-highlight.png"; path = "../../sudoku/sudoku/Images.xcassets/gray-highlight.imageset/gray-highlight.png"; sourceTree = "<group>"; };
+		A8AD8E9619D8EEF400791B9A /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9719D8EEF400791B9A /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9819D8EEF400791B9A /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9919D8EEF400791B9A /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
+		A8AD8E9A19D8EEF400791B9A /* ipad app@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad app@1x.png"; sourceTree = "<group>"; };
+		A8AD8E9B19D8EEF400791B9A /* ipad app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad app@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9C19D8EEF400791B9A /* ipad settings 1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad settings 1x.png"; sourceTree = "<group>"; };
+		A8AD8E9D19D8EEF400791B9A /* ipad settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad settings@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9E19D8EEF400791B9A /* ipad spotlight @1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad spotlight @1x.png"; sourceTree = "<group>"; };
+		A8AD8E9F19D8EEF400791B9A /* ipad spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad spotlight@2x.png"; sourceTree = "<group>"; };
+		A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone app@2x.png"; sourceTree = "<group>"; };
+		A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone app@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +198,7 @@
 		A8A984C019CA545300D3DAE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A8AD8E9519D8EEF400791B9A /* icons */,
 				A8AD8E9319D8DDEC00791B9A /* gray-highlight.png */,
 				A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */,
 				A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */,
@@ -206,6 +231,26 @@
 				A8A984E419CA545300D3DAE3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8AD8E9519D8EEF400791B9A /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				A8AD8E9619D8EEF400791B9A /* Icon-40@2x.png */,
+				A8AD8E9719D8EEF400791B9A /* Icon-60@2x.png */,
+				A8AD8E9819D8EEF400791B9A /* Icon-Small@2x.png */,
+				A8AD8E9919D8EEF400791B9A /* Icon-Small@3x.png */,
+				A8AD8E9A19D8EEF400791B9A /* ipad app@1x.png */,
+				A8AD8E9B19D8EEF400791B9A /* ipad app@2x.png */,
+				A8AD8E9C19D8EEF400791B9A /* ipad settings 1x.png */,
+				A8AD8E9D19D8EEF400791B9A /* ipad settings@2x.png */,
+				A8AD8E9E19D8EEF400791B9A /* ipad spotlight @1x.png */,
+				A8AD8E9F19D8EEF400791B9A /* ipad spotlight@2x.png */,
+				A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */,
+				A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */,
+			);
+			name = icons;
+			path = ../../../../../../Desktop/icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,16 +332,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A984D019CA545300D3DAE3 /* Main_iPad.storyboard in Resources */,
+				A8AD8EA819D8EEF400791B9A /* ipad settings 1x.png in Resources */,
 				A8AD8E9219D8DBC700791B9A /* sudoku-icon_2x.png in Resources */,
+				A8AD8EA319D8EEF400791B9A /* Icon-60@2x.png in Resources */,
+				A8AD8EA719D8EEF400791B9A /* ipad app@2x.png in Resources */,
+				A8AD8EA919D8EEF400791B9A /* ipad settings@2x.png in Resources */,
+				A8AD8EAB19D8EEF400791B9A /* ipad spotlight@2x.png in Resources */,
+				A8AD8EA519D8EEF400791B9A /* Icon-Small@3x.png in Resources */,
+				A8AD8EAC19D8EEF400791B9A /* iphone app@2x.png in Resources */,
 				A8AD8E9119D8DBC700791B9A /* Apps-Sudoku-icon.png in Resources */,
 				A8AD8E8E19D8A5B000791B9A /* bg.jpg in Resources */,
 				A8AD8E8519D87D3800791B9A /* grid1.txt in Resources */,
 				A8AD8E8C19D8A3D600791B9A /* landscape2.jpg in Resources */,
 				A8A984D519CA545300D3DAE3 /* Images.xcassets in Resources */,
+				A8AD8EAD19D8EEF400791B9A /* iphone app@3x.png in Resources */,
 				A8AD8E8A19D89ACD00791B9A /* landscape.jpg in Resources */,
+				A8AD8EA619D8EEF400791B9A /* ipad app@1x.png in Resources */,
+				A8AD8EAA19D8EEF400791B9A /* ipad spotlight @1x.png in Resources */,
 				A8AD8E8619D87D3800791B9A /* grid2.txt in Resources */,
+				A8AD8EA219D8EEF400791B9A /* Icon-40@2x.png in Resources */,
 				A8A984CD19CA545300D3DAE3 /* Main_iPhone.storyboard in Resources */,
 				A8A984C419CA545300D3DAE3 /* InfoPlist.strings in Resources */,
+				A8AD8EA419D8EEF400791B9A /* Icon-Small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CHZZSudoku/CHZZSudoku-Prefix.pch";
 				INFOPLIST_FILE = "CHZZSudoku/CHZZSudoku-Info.plist";

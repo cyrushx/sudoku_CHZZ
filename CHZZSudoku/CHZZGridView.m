@@ -70,8 +70,13 @@
 {
     UIButton* button = _cells[row][col];
     [button setBackgroundColor:[UIColor whiteColor]];
-    NSString* title = [NSString stringWithFormat:@"%d", value];
-    [button setTitle:title forState:UIControlStateNormal];
+    if(value == 0){
+        [button setTitle:@"" forState:UIControlStateNormal];
+    }else{
+        NSString* title = [NSString stringWithFormat:@"%d", value];
+        [button setTitle:title forState:UIControlStateNormal];
+    }
+    
 }
 
 // the number of 0 is used to represent blank

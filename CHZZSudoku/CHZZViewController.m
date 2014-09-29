@@ -164,9 +164,6 @@
 
 - (void)gridCellSelectedAtRow:(NSNumber*)row col:(NSNumber*) col
 {
-    // The message is for debug use
-    NSLog(@"The button is pressed, with row %@ and col %@", row, col);
-    
     // convert row and col to int
     selectedRow = [row intValue];
     selectedCol = [col intValue];
@@ -177,7 +174,6 @@
 
 - (IBAction)flip:(id)sender {
     UISwitch* assist = (UISwitch*) sender;
-    NSLog(@"is :%hhd",assist.on);
     
     if (assist.on)  ASSISTON = YES;
     else    ASSISTON = NO;
