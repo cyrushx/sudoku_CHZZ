@@ -80,7 +80,7 @@
         
         if(array[i] == 0){
             [_cells[i] setTag:0];
-            if(assistOn) [_cells[i] setBackgroundColor:[UIColor grayColor]];
+            if(assistOn) [_cells[i] setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.5]];
         }else{
             [_cells[i] setTag:1];
         }

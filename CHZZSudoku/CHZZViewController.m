@@ -42,29 +42,29 @@
     
     CGRect startFrame = CGRectMake(xButtonStart, yButton, startButtonSize, startButtonSize / 2);
     UIButton* start = [[UIButton alloc] initWithFrame:startFrame];
-    start.layer.cornerRadius = 20;
+    start.layer.cornerRadius = startButtonSize / 10;
     start.layer.borderWidth = 1.0f;
     [start setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.7]];
-    [start setTitle:@"Start" forState:UIControlStateNormal];
+    [start setTitle:@"Start New" forState:UIControlStateNormal];
     [start setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    start.titleLabel.font = [UIFont systemFontOfSize:30];
+    start.titleLabel.font = [UIFont systemFontOfSize:startButtonSize/5];
     [self.view addSubview:start];
     [start addTarget:self action:@selector(startNewGame) forControlEvents:UIControlEventTouchUpInside];
     
     CGRect resetFrame = CGRectMake(xButtonReset, yButton, resetButtonSize, resetButtonSize / 2);
     UIButton* reset = [[UIButton alloc] initWithFrame:resetFrame];
-    reset.layer.cornerRadius = 20;
+    reset.layer.cornerRadius = startButtonSize / 10;
     reset.layer.borderWidth = 1.0f;
     [reset setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.7]];
     [reset setTitle:@"Reset" forState:UIControlStateNormal];
     [reset setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    reset.titleLabel.font = [UIFont systemFontOfSize:30];
+    reset.titleLabel.font = [UIFont systemFontOfSize:startButtonSize/5];
     [self.view addSubview:reset];
     [reset addTarget:self action:@selector(resetCurrentGame) forControlEvents:UIControlEventTouchUpInside];
     
     // set up assist switch
-    CGFloat xSwitch = CGRectGetWidth(frame) * 0.53;
-    CGFloat ySwitch = CGRectGetHeight(frame) * 0.925;
+    CGFloat xSwitch = CGRectGetWidth(frame) * 0.52;
+    CGFloat ySwitch = CGRectGetHeight(frame) * 0.92;
     CGFloat switchSize = startButtonSize;
     CGRect switchFrame = CGRectMake(xSwitch, ySwitch, switchSize, switchSize/2);
     UISwitch* assist = [[UISwitch alloc] initWithFrame:switchFrame];
@@ -74,7 +74,7 @@
     ASSISTON = NO;
     
     // set up assist label
-    CGFloat xLabel = CGRectGetWidth(frame) * 0.40;
+    CGFloat xLabel = CGRectGetWidth(frame) * 0.38;
     CGFloat yLabel = CGRectGetHeight(frame) * 0.9;
     CGFloat labelSize = startButtonSize;
     CGRect labelFrame = CGRectMake(xLabel, yLabel, labelSize, labelSize/2);
@@ -183,6 +183,7 @@
     else    ASSISTON = NO;
     
     [_numPadView setAssist:ASSISTON];
+    [_numPadView setEnableWithArray:numpadEnable];
 }
 
 - (void)didReceiveMemoryWarning
