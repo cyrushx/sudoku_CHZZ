@@ -67,6 +67,12 @@
     assistOn = assist;
 }
 
+-(void)resetColor
+{
+    for(int i = 0; i<9; i++)
+        [_cells[i] setBackgroundColor:[UIColor whiteColor]];
+}
+
 -(void)setEnableWithArray:(int[])array
 {
     for(int i = 0; i<9; i++){

@@ -80,6 +80,7 @@
     UIButton* button = _cells[row][col];
     if (value == 0) {
         [button setTitle:@"" forState:UIControlStateNormal];
+        [button setEnabled:YES];
     } else {
         NSString* title = [NSString stringWithFormat:@"%d", value];
         [button setTitle:title forState:UIControlStateNormal];

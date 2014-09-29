@@ -15,5 +15,6 @@
 - (void)setTarget:(id)target action:(SEL)action;
 - (void)setEnableWithArray:(int[])array;
 - (void)setAssist:(BOOL)assist;
+- (void)resetColor;
 
 @end

@@ -15,6 +15,7 @@
 }
 
 -(void) generateGrid;
+-(void) resetMutableArray;
 -(int) getValueAtRow:(int)row colum:(int)colum;
 -(void) setValueAtRow:(int)row colum:(int)colum to:(int)to;
 -(bool) isMutableAtRow:(int)row colum:(int)colum;

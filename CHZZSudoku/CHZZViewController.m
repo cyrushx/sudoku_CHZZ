@@ -16,6 +16,7 @@
     CHZZGridView* _gridView;
     CHZZNumpadView* _numPadView;
     CHZZGridModel* _gridModel;
+    bool ASSISTON;
     int selectedRow;
     int selectedCol;
     int numpadEnable[9];
@@ -70,6 +71,8 @@
     [self.view addSubview:assist];
     [assist addTarget:self action:@selector(flip:) forControlEvents:UIControlEventValueChanged];
     
+    ASSISTON = NO;
+    
     // set up assist label
     CGFloat xLabel = CGRectGetWidth(frame) * 0.40;
     CGFloat yLabel = CGRectGetHeight(frame) * 0.9;
@@ -80,14 +83,37 @@
     [label setTextColor:[UIColor blackColor]];
     [self.view addSubview:label];
     
+    // initialize _gridModel
+    _gridModel = [[CHZZGridModel alloc] init];
     
+    // initilize _gridView
+    float framePortion = 0.8;
+    CGFloat x    = CGRectGetWidth(frame) * (1 - framePortion) / 2;
+    CGFloat y    = CGRectGetHeight(frame) * (1 - framePortion) / 2;
+    CGFloat size = MIN(CGRectGetWidth(frame), CGRectGetHeight(frame)) * framePortion;
+    CGRect gridFrame = CGRectMake(x, y, size, size);
+    
+    _gridView = [[CHZZGridView alloc] initWithFrame:gridFrame size:size];
+    [self.view addSubview:_gridView];
+    [_gridView setTarget:self action:@selector(gridCellSelectedAtRow:col:)];
+    
+    // initilize _numPadView
+    CGFloat numPadX = x;
+    CGFloat numPadY = size + 1.5 * y;
+    CGFloat numPadheight = size * 0.189; // the portion is calculated
+    CGRect numPadFrame = CGRectMake(numPadX, numPadY, size, numPadheight);
+    
+    _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
+    [self.view addSubview:_numPadView];
+    [_numPadView setTarget:self action:@selector(numPadSelected:)];
+
+    [_numPadView setAssist:NO];
 
     [self startNewGame];
 }
 
 - (void)resetCurrentGame
 {
-    
     // empty all user's choices
     for (int row = 0; row < 9; row++) {
         for (int col = 0; col < 9; col++) {
@@ -95,13 +121,17 @@
             [_gridView setDefaultValueAtRow:row col:col to:value];
         }
     }
+    
+    [_gridModel resetMutableArray];
 }
 
 - (void)startNewGame
 {
     // generate a new grid and reset the game
     [_gridModel generateGrid];
-    [_numPadView setAssist:NO];
+    [_numPadView setAssist:ASSISTON];
+    [_numPadView resetColor];
+    [_gridView resetColor];
     [self resetCurrentGame];
 }
 
@@ -148,14 +178,11 @@
 - (IBAction)flip:(id)sender {
     UISwitch* assist = (UISwitch*) sender;
     NSLog(@"is :%hhd",assist.on);
-    if (assist.on)
-    {
-        [_numPadView setAssist:YES];
-    }
-    else
-    {
-        [_numPadView setAssist:NO];
-    }
+    
+    if (assist.on)  ASSISTON = YES;
+    else    ASSISTON = NO;
+    
+    [_numPadView setAssist:ASSISTON];
 }
 
 - (void)didReceiveMemoryWarning

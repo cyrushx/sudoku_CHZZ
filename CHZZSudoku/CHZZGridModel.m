@@ -50,11 +50,21 @@ int initGrid[9][9];
         for (NSInteger col = 0; col < 9; col++)
         {
             NSString* value = [gridString substringWithRange:NSMakeRange(row * 9 + col, 1)];
-            mutableGridCopy[row][col] = [value intValue];
             initGrid[row][col] = [value intValue];
         }
     }
     
+}
+
+-(void) resetMutableArray
+{
+    for (NSInteger row = 0; row < 9; row++)
+    {
+        for (NSInteger col = 0; col < 9; col++)
+        {
+            mutableGridCopy[row][col] = initGrid[row][col];
+        }
+    }
 }
 
 -(int) getValueAtRow:(int)row colum:(int)colum
