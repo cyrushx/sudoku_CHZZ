@@ -65,7 +65,7 @@
     return self;
 }
 
-// the number of 0 is used to represent blank
+// 0 is used to represent blank
 - (void)setValueAtRow:(int)row col:(int)col to:(int)value
 {
     UIButton* button = _cells[row][col];
@@ -79,7 +79,7 @@
     
 }
 
-// the number of 0 is used to represent blank
+// 0 is used to represent blank
 - (void)setDefaultValueAtRow:(int)row col:(int)col to:(int)value
 {
     UIButton* button = _cells[row][col];
@@ -90,7 +90,7 @@
         NSString* title = [NSString stringWithFormat:@"%d", value];
         [button setTitle:title forState:UIControlStateNormal];
         [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [button setEnabled:NO];
+        [button setEnabled:NO]; // disable any change if it's original cell
     }
 }
 

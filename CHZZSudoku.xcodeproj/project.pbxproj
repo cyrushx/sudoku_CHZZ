@@ -60,6 +60,7 @@
 		A8AD8EAC19D8EEF400791B9A /* iphone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */; };
 		A8AD8EAD19D8EEF400791B9A /* iphone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */; };
 		A8AD8EB019D8FE8B00791B9A /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EAF19D8FE8B00791B9A /* test.txt */; };
+		A8AD8EB219D9F2D500791B9A /* bad2 in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EB119D9F2D500791B9A /* bad2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone app@2x.png"; sourceTree = "<group>"; };
 		A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone app@3x.png"; sourceTree = "<group>"; };
 		A8AD8EAF19D8FE8B00791B9A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test.txt; path = ../../../../../../Downloads/test.txt; sourceTree = "<group>"; };
+		A8AD8EB119D9F2D500791B9A /* bad2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bad2; path = ../../../../../../Downloads/bad2; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */,
 				A8AD8E8919D89ACD00791B9A /* landscape.jpg */,
 				A8AD8EAF19D8FE8B00791B9A /* test.txt */,
+				A8AD8EB119D9F2D500791B9A /* bad2 */,
 				A8AD8E8319D87D3800791B9A /* grid1.txt */,
 				A8AD8E8419D87D3800791B9A /* grid2.txt */,
 				A8A984C119CA545300D3DAE3 /* CHZZSudoku-Info.plist */,
@@ -338,6 +341,7 @@
 				A8AD8EA819D8EEF400791B9A /* ipad settings 1x.png in Resources */,
 				A8AD8E9219D8DBC700791B9A /* sudoku-icon_2x.png in Resources */,
 				A8AD8EA319D8EEF400791B9A /* Icon-60@2x.png in Resources */,
+				A8AD8EB219D9F2D500791B9A /* bad2 in Resources */,
 				A8AD8EA719D8EEF400791B9A /* ipad app@2x.png in Resources */,
 				A8AD8EA919D8EEF400791B9A /* ipad settings@2x.png in Resources */,
 				A8AD8EAB19D8EEF400791B9A /* ipad spotlight@2x.png in Resources */,

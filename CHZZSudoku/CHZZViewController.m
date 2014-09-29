@@ -16,7 +16,9 @@
     CHZZGridView* _gridView;
     CHZZNumpadView* _numPadView;
     CHZZGridModel* _gridModel;
-    bool ASSISTON;
+    
+    // assist switch methods
+    bool ASSISTON; // a flag to indicate if the assist switch is on or not
     int selectedRow;
     int selectedCol;
     int numpadEnable[9];
@@ -33,7 +35,7 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.jpg"]];
     CGRect frame = self.view.frame;
     
-    // set up start and reset buttons
+    // set up start button
     CGFloat yButton = CGRectGetHeight(frame) * 0.9;
     CGFloat xButtonStart = CGRectGetWidth(frame) * 0.1;
     CGFloat startButtonSize = xButtonStart * 2;
@@ -51,6 +53,7 @@
     [self.view addSubview:start];
     [start addTarget:self action:@selector(startNewGame) forControlEvents:UIControlEventTouchUpInside];
     
+    // set up reset button
     CGRect resetFrame = CGRectMake(xButtonReset, yButton, resetButtonSize, resetButtonSize / 2);
     UIButton* reset = [[UIButton alloc] initWithFrame:resetFrame];
     reset.layer.cornerRadius = startButtonSize / 10;
@@ -106,7 +109,6 @@
     _numPadView = [[CHZZNumpadView alloc] initWithFrame:numPadFrame length:size];
     [self.view addSubview:_numPadView];
     [_numPadView setTarget:self action:@selector(numPadSelected:)];
-
     [_numPadView setAssist:NO];
 
     [self startNewGame];
@@ -114,6 +116,7 @@
 
 - (void)resetCurrentGame
 {
+    // reset all colors
     [_numPadView resetColor];
     [_gridView resetColor];
     [_gridModel resetMutableArray];
@@ -135,25 +138,6 @@
     [self resetCurrentGame];
 }
 
-- (void)numpadCheckAtRow:(int)row Col:(int)col
-{
-    for(int i = 0; i < 9; i++){
-        int numpadVal = i + 1;
-
-        if([_gridModel isMutableAtRow:row colum:col]){
-            
-            if([_gridModel isConsistentAtRow:row colum:col for:numpadVal])
-                numpadEnable[i] = 1;
-            else
-                numpadEnable[i] = 0;
-        } else{
-            numpadEnable[i] = 0;
-        }
-    }
-    [_numPadView setEnableWithArray:numpadEnable];
-    
-}
-
 - (void)numPadSelected:(NSNumber*)value
 {
     int v = [value intValue];
@@ -172,6 +156,25 @@
     [self numpadCheckAtRow:selectedRow Col:selectedCol];
 }
 
+- (void)numpadCheckAtRow:(int)row Col:(int)col
+{
+    for(int i = 0; i < 9; i++){
+        int numpadVal = i + 1;
+        
+        if([_gridModel isMutableAtRow:row colum:col]){
+
+            if([_gridModel isConsistentAtRow:row colum:col for:numpadVal])
+                numpadEnable[i] = 1;
+            else
+                numpadEnable[i] = 0;
+        } else{
+            numpadEnable[i] = 0;
+        }
+    }
+    [_numPadView setEnableWithArray:numpadEnable];
+}
+
+// flip the flag when switch value is changed
 - (IBAction)flip:(id)sender {
     UISwitch* assist = (UISwitch*) sender;
     

@@ -3,15 +3,15 @@
 //  CHZZSudoku
 //
 //  Created by Zehao Zhang on 14-9-21.
-//  Copyright (c) 2014年 Cyrus Huang, Zehao Zhang. All rights reserved.
+//  Copyright (c) 2014 Cyrus Huang, Zehao Zhang. All rights reserved.
 //
 
 #import "CHZZGridModel.h"
 
-// For now, the initial grid is hardcoded
+// this grid can be modified
 int mutableGridCopy[9][9];
 
-// this grid can be modified
+// this grid represents a copy of original grid
 int initGrid[9][9];
 
 @implementation CHZZGridModel
@@ -20,18 +20,17 @@ int initGrid[9][9];
 {
     // randomly choose between grid1.txt and grid2.txt
     NSString* fileName;
-    NSInteger fileNum = arc4random() % 1;
+    NSInteger fileNum = arc4random() % 2;
     if (fileNum == 0)
         fileName = @"grid1";
-        // path = [[NSBundle mainBundle] pathForResource:@"grid1" ofType:@"txt"];
     else
         fileName = @"grid2";
-        // path = [[NSBundle mainBundle] pathForResource:@"grid2" ofType:@"txt"];
     
     NSString* gridString =[self readString:fileName];
     [self parseString:gridString];
 }
 
+// if the input is invalid, return empty string
 -(NSString*) readString:(NSString*) fileName
 {
     // genearte path and read the string
@@ -40,15 +39,25 @@ int initGrid[9][9];
     
     NSString* readString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     
-    NSInteger stringLength = [readString length];
-    NSInteger gridLength   = 82; // 81 grids and a line break
+    NSString* gridString = @"";
     
-    // find how many grids are stored in text file
-    NSInteger gridNum  = stringLength / gridLength;
-    NSInteger gridLine = arc4random() % gridNum;
-    NSInteger start = gridLine * gridLength;
+    if (readString != nil)
+    {
+        NSInteger stringLength = [readString length];
+        NSInteger gridLength   = 82; // 81 cells and a line break
+        
+        if (stringLength % gridLength == 0)
+        {
+            // find how many grids are stored in text file
+            NSInteger gridNum  = stringLength / gridLength;
+            NSInteger gridLine = arc4random() % gridNum;
+            NSInteger start = gridLine * gridLength;
+            
+            gridString = [readString substringWithRange:NSMakeRange(start, gridLength - 1)];
+        }
+        
+    }
     
-    NSString* gridString = [readString substringWithRange:NSMakeRange(start, gridLength - 1)];
     return gridString;
 }
 
@@ -59,8 +68,13 @@ int initGrid[9][9];
     {
         for (NSInteger col = 0; col < 9; col++)
         {
-            NSString* value = [gridString substringWithRange:NSMakeRange(row * 9 + col, 1)];
-            initGrid[row][col] = [value intValue];
+            if (![gridString isEqualToString:@""])
+            {
+                NSString* value = [gridString substringWithRange:NSMakeRange(row * 9 + col, 1)];
+                initGrid[row][col] = [value intValue];
+            } else {
+                initGrid[row][col] = 0; // if input is an empty string, add 0 to grid
+            }
         }
     }
 }
@@ -69,6 +83,7 @@ int initGrid[9][9];
 
 -(void) resetMutableArray
 {
+    // copy values from initGrid
     for (NSInteger row = 0; row < 9; row++)
     {
         for (NSInteger col = 0; col < 9; col++)
@@ -80,22 +95,34 @@ int initGrid[9][9];
 
 -(int) getValueAtRow:(int)row colum:(int)colum
 {
-    return mutableGridCopy[row][colum];
+    if (row > 9 || row < 0 || colum > 9 || colum < 0)
+        return 0;
+    else
+        return mutableGridCopy[row][colum];
 }
 
 -(void) setValueAtRow:(int)row colum:(int)colum to:(int)value
 {
-    mutableGridCopy[row][colum] = value;
+    if (value > 9 || value < 0)
+        mutableGridCopy[row][colum] = 0;
+    else
+        mutableGridCopy[row][colum] = value;
 }
 
 -(bool) isMutableAtRow:(int)row colum:(int)colum
 {
-    return initGrid[row][colum]==0;
+    if (row > 9 || row < 0 || colum > 9 || colum < 0)
+        return NO;
+    else
+        return initGrid[row][colum] == 0;
 }
 
 -(bool) isConsistentAtRow:(int)row colum:(int)colum for:(int)num
 {
-    return [self rowCheck:row for:num]&&[self colCheck:colum for:num]&&[self blockCheck:row col:colum for:num];
+    if (row > 9 || row < 0 || colum > 9 || colum < 0 || num > 9 || num <0)
+        return NO;
+    else
+        return [self rowCheck:row for:num]&&[self colCheck:colum for:num]&&[self blockCheck:row col:colum for:num];
 }
 
 -(bool) rowCheck:(int)row for:(int)num
