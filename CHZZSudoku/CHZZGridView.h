@@ -12,7 +12,9 @@
 
 - (id)initWithFrame:(CGRect)frame size:(CGFloat) screenSize;
 - (void)setValueAtRow:(int)row col:(int)col to:(int)value;
+- (void)setDefaultValueAtRow:(int)row col:(int)col to:(int)value;
 - (void)setTarget:(id)target action:(SEL)action;
+- (void)resetColor;
 
 @end
 

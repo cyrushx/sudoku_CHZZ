@@ -6,20 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		A8A9853819CBB71B00D3DAE3 /* OCLint */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = A8A9853B19CBB71B00D3DAE3 /* Build configuration list for PBXAggregateTarget "OCLint" */;
-			buildPhases = (
-				A8A9853C19CBB73D00D3DAE3 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = OCLint;
-			productName = OCLint;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		A8590ABA19CF95CE001CF7FA /* CHZZGridModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8590AB919CF95CE001CF7FA /* CHZZGridModel.m */; };
 		A8590ABD19CF9635001CF7FA /* CHZZNumpadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8590ABC19CF9635001CF7FA /* CHZZNumpadView.m */; };
@@ -39,6 +25,28 @@
 		A8A984E619CA545300D3DAE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8A984E419CA545300D3DAE3 /* InfoPlist.strings */; };
 		A8A984E819CA545300D3DAE3 /* CHZZSudokuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A984E719CA545300D3DAE3 /* CHZZSudokuTests.m */; };
 		A8A984F319CA54D700D3DAE3 /* CHZZGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */; };
+		A8AD8E8519D87D3800791B9A /* grid1.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8319D87D3800791B9A /* grid1.txt */; };
+		A8AD8E8619D87D3800791B9A /* grid2.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8419D87D3800791B9A /* grid2.txt */; };
+		A8AD8E8A19D89ACD00791B9A /* landscape.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8919D89ACD00791B9A /* landscape.jpg */; };
+		A8AD8E8C19D8A3D600791B9A /* landscape2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */; };
+		A8AD8E8E19D8A5B000791B9A /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8D19D8A5B000791B9A /* bg.jpg */; };
+		A8AD8E9119D8DBC700791B9A /* Apps-Sudoku-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */; };
+		A8AD8E9219D8DBC700791B9A /* sudoku-icon_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */; };
+		A8AD8E9419D8DDEC00791B9A /* gray-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9319D8DDEC00791B9A /* gray-highlight.png */; };
+		A8AD8EA219D8EEF400791B9A /* Icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9619D8EEF400791B9A /* Icon-40@2x.png */; };
+		A8AD8EA319D8EEF400791B9A /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9719D8EEF400791B9A /* Icon-60@2x.png */; };
+		A8AD8EA419D8EEF400791B9A /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9819D8EEF400791B9A /* Icon-Small@2x.png */; };
+		A8AD8EA519D8EEF400791B9A /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9919D8EEF400791B9A /* Icon-Small@3x.png */; };
+		A8AD8EA619D8EEF400791B9A /* ipad app@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9A19D8EEF400791B9A /* ipad app@1x.png */; };
+		A8AD8EA719D8EEF400791B9A /* ipad app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9B19D8EEF400791B9A /* ipad app@2x.png */; };
+		A8AD8EA819D8EEF400791B9A /* ipad settings 1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9C19D8EEF400791B9A /* ipad settings 1x.png */; };
+		A8AD8EA919D8EEF400791B9A /* ipad settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9D19D8EEF400791B9A /* ipad settings@2x.png */; };
+		A8AD8EAA19D8EEF400791B9A /* ipad spotlight @1x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9E19D8EEF400791B9A /* ipad spotlight @1x.png */; };
+		A8AD8EAB19D8EEF400791B9A /* ipad spotlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8E9F19D8EEF400791B9A /* ipad spotlight@2x.png */; };
+		A8AD8EAC19D8EEF400791B9A /* iphone app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */; };
+		A8AD8EAD19D8EEF400791B9A /* iphone app@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */; };
+		A8AD8EB019D8FE8B00791B9A /* test.txt in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EAF19D8FE8B00791B9A /* test.txt */; };
+		A8AD8EB219D9F2D500791B9A /* bad2 in Resources */ = {isa = PBXBuildFile; fileRef = A8AD8EB119D9F2D500791B9A /* bad2 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +86,28 @@
 		A8A984E719CA545300D3DAE3 /* CHZZSudokuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CHZZSudokuTests.m; sourceTree = "<group>"; };
 		A8A984F119CA54D700D3DAE3 /* CHZZGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHZZGridView.h; sourceTree = "<group>"; };
 		A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHZZGridView.m; sourceTree = "<group>"; };
+		A8AD8E8319D87D3800791B9A /* grid1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = grid1.txt; path = ../../../../../../Downloads/grid1.txt; sourceTree = "<group>"; };
+		A8AD8E8419D87D3800791B9A /* grid2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = grid2.txt; path = ../../../../../../Downloads/grid2.txt; sourceTree = "<group>"; };
+		A8AD8E8919D89ACD00791B9A /* landscape.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = landscape.jpg; path = ../../../../../Pictures/landscape.jpg; sourceTree = "<group>"; };
+		A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = landscape2.jpg; path = ../../../../../Pictures/landscape2.jpg; sourceTree = "<group>"; };
+		A8AD8E8D19D8A5B000791B9A /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = ../../../../../Pictures/bg.jpg; sourceTree = "<group>"; };
+		A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Apps-Sudoku-icon.png"; path = "../../../../../Pictures/Apps-Sudoku-icon.png"; sourceTree = "<group>"; };
+		A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sudoku-icon_2x.png"; path = "../../../../../Pictures/sudoku-icon_2x.png"; sourceTree = "<group>"; };
+		A8AD8E9319D8DDEC00791B9A /* gray-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gray-highlight.png"; path = "../../sudoku/sudoku/Images.xcassets/gray-highlight.imageset/gray-highlight.png"; sourceTree = "<group>"; };
+		A8AD8E9619D8EEF400791B9A /* Icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9719D8EEF400791B9A /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9819D8EEF400791B9A /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9919D8EEF400791B9A /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
+		A8AD8E9A19D8EEF400791B9A /* ipad app@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad app@1x.png"; sourceTree = "<group>"; };
+		A8AD8E9B19D8EEF400791B9A /* ipad app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad app@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9C19D8EEF400791B9A /* ipad settings 1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad settings 1x.png"; sourceTree = "<group>"; };
+		A8AD8E9D19D8EEF400791B9A /* ipad settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad settings@2x.png"; sourceTree = "<group>"; };
+		A8AD8E9E19D8EEF400791B9A /* ipad spotlight @1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad spotlight @1x.png"; sourceTree = "<group>"; };
+		A8AD8E9F19D8EEF400791B9A /* ipad spotlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipad spotlight@2x.png"; sourceTree = "<group>"; };
+		A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone app@2x.png"; sourceTree = "<group>"; };
+		A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iphone app@3x.png"; sourceTree = "<group>"; };
+		A8AD8EAF19D8FE8B00791B9A /* test.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test.txt; path = ../../../../../../Downloads/test.txt; sourceTree = "<group>"; };
+		A8AD8EB119D9F2D500791B9A /* bad2 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = bad2; path = ../../../../../../Downloads/bad2; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,9 +172,9 @@
 				A8A984CB19CA545300D3DAE3 /* Main_iPhone.storyboard */,
 				A8A984CE19CA545300D3DAE3 /* Main_iPad.storyboard */,
 				A8A984D119CA545300D3DAE3 /* CHZZViewController.h */,
+				A8A984D219CA545300D3DAE3 /* CHZZViewController.m */,
 				A8A984F119CA54D700D3DAE3 /* CHZZGridView.h */,
 				A8A984F219CA54D700D3DAE3 /* CHZZGridView.m */,
-				A8A984D219CA545300D3DAE3 /* CHZZViewController.m */,
 				A8590AB819CF95CE001CF7FA /* CHZZGridModel.h */,
 				A8590AB919CF95CE001CF7FA /* CHZZGridModel.m */,
 				A8590ABB19CF9635001CF7FA /* CHZZNumpadView.h */,
@@ -158,6 +188,17 @@
 		A8A984C019CA545300D3DAE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A8AD8E9519D8EEF400791B9A /* icons */,
+				A8AD8E9319D8DDEC00791B9A /* gray-highlight.png */,
+				A8AD8E8F19D8DBC700791B9A /* Apps-Sudoku-icon.png */,
+				A8AD8E9019D8DBC700791B9A /* sudoku-icon_2x.png */,
+				A8AD8E8D19D8A5B000791B9A /* bg.jpg */,
+				A8AD8E8B19D8A3D600791B9A /* landscape2.jpg */,
+				A8AD8E8919D89ACD00791B9A /* landscape.jpg */,
+				A8AD8EAF19D8FE8B00791B9A /* test.txt */,
+				A8AD8EB119D9F2D500791B9A /* bad2 */,
+				A8AD8E8319D87D3800791B9A /* grid1.txt */,
+				A8AD8E8419D87D3800791B9A /* grid2.txt */,
 				A8A984C119CA545300D3DAE3 /* CHZZSudoku-Info.plist */,
 				A8A984C219CA545300D3DAE3 /* InfoPlist.strings */,
 				A8A984C519CA545300D3DAE3 /* main.m */,
@@ -184,6 +225,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A8AD8E9519D8EEF400791B9A /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				A8AD8E9619D8EEF400791B9A /* Icon-40@2x.png */,
+				A8AD8E9719D8EEF400791B9A /* Icon-60@2x.png */,
+				A8AD8E9819D8EEF400791B9A /* Icon-Small@2x.png */,
+				A8AD8E9919D8EEF400791B9A /* Icon-Small@3x.png */,
+				A8AD8E9A19D8EEF400791B9A /* ipad app@1x.png */,
+				A8AD8E9B19D8EEF400791B9A /* ipad app@2x.png */,
+				A8AD8E9C19D8EEF400791B9A /* ipad settings 1x.png */,
+				A8AD8E9D19D8EEF400791B9A /* ipad settings@2x.png */,
+				A8AD8E9E19D8EEF400791B9A /* ipad spotlight @1x.png */,
+				A8AD8E9F19D8EEF400791B9A /* ipad spotlight@2x.png */,
+				A8AD8EA019D8EEF400791B9A /* iphone app@2x.png */,
+				A8AD8EA119D8EEF400791B9A /* iphone app@3x.png */,
+			);
+			name = icons;
+			path = ../../../../../../Desktop/icons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +255,7 @@
 				A8A984B219CA545300D3DAE3 /* Sources */,
 				A8A984B319CA545300D3DAE3 /* Frameworks */,
 				A8A984B419CA545300D3DAE3 /* Resources */,
+				A8AD8EB319DA04B500791B9A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -252,7 +314,6 @@
 			targets = (
 				A8A984B519CA545300D3DAE3 /* CHZZSudoku */,
 				A8A984D919CA545300D3DAE3 /* CHZZSudokuTests */,
-				A8A9853819CBB71B00D3DAE3 /* OCLint */,
 			);
 		};
 /* End PBXProject section */
@@ -263,9 +324,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A984D019CA545300D3DAE3 /* Main_iPad.storyboard in Resources */,
+				A8AD8EA819D8EEF400791B9A /* ipad settings 1x.png in Resources */,
+				A8AD8E9219D8DBC700791B9A /* sudoku-icon_2x.png in Resources */,
+				A8AD8EA319D8EEF400791B9A /* Icon-60@2x.png in Resources */,
+				A8AD8EB219D9F2D500791B9A /* bad2 in Resources */,
+				A8AD8EA719D8EEF400791B9A /* ipad app@2x.png in Resources */,
+				A8AD8EA919D8EEF400791B9A /* ipad settings@2x.png in Resources */,
+				A8AD8EAB19D8EEF400791B9A /* ipad spotlight@2x.png in Resources */,
+				A8AD8EA519D8EEF400791B9A /* Icon-Small@3x.png in Resources */,
+				A8AD8EAC19D8EEF400791B9A /* iphone app@2x.png in Resources */,
+				A8AD8E9119D8DBC700791B9A /* Apps-Sudoku-icon.png in Resources */,
+				A8AD8E8E19D8A5B000791B9A /* bg.jpg in Resources */,
+				A8AD8E8519D87D3800791B9A /* grid1.txt in Resources */,
+				A8AD8E8C19D8A3D600791B9A /* landscape2.jpg in Resources */,
 				A8A984D519CA545300D3DAE3 /* Images.xcassets in Resources */,
+				A8AD8EAD19D8EEF400791B9A /* iphone app@3x.png in Resources */,
+				A8AD8E8A19D89ACD00791B9A /* landscape.jpg in Resources */,
+				A8AD8EA619D8EEF400791B9A /* ipad app@1x.png in Resources */,
+				A8AD8EAA19D8EEF400791B9A /* ipad spotlight @1x.png in Resources */,
+				A8AD8E8619D87D3800791B9A /* grid2.txt in Resources */,
+				A8AD8EA219D8EEF400791B9A /* Icon-40@2x.png in Resources */,
 				A8A984CD19CA545300D3DAE3 /* Main_iPhone.storyboard in Resources */,
 				A8A984C419CA545300D3DAE3 /* InfoPlist.strings in Resources */,
+				A8AD8EB019D8FE8B00791B9A /* test.txt in Resources */,
+				A8AD8EA419D8EEF400791B9A /* Icon-Small@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,13 +356,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8A984E619CA545300D3DAE3 /* InfoPlist.strings in Resources */,
+				A8AD8E9419D8DDEC00791B9A /* gray-highlight.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A8A9853C19CBB73D00D3DAE3 /* ShellScript */ = {
+		A8AD8EB319DA04B500791B9A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,7 +374,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\n\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho >&2 \"oclint not found, analyzing stopped\"\nexit 1\nfi\n\n\ncd ${TARGET_TEMP_DIR}\nif [ ! -f compile_commands.json ]; then\necho \"[*] compile_commands.json not found, possibly clean was performed\"\necho \"[*] starting xcodebuild to rebuild the project..\"\n# clean previous output\nif [ -f xcodebuild.log ]; then\nrm xcodebuild.log\nfi\n\ncd ${SRCROOT}\nxcodebuild clean\n\n#build xcodebuild.log\nxcodebuild | tee ${TARGET_TEMP_DIR}/xcodebuild.log\n#xcodebuild <options>| tee ${TARGET_TEMP_DIR}/xcodebuild.log\n\necho \"[*] transforming xcodebuild.log into compile_commands.json...\"\ncd ${TARGET_TEMP_DIR}\n#transform it into compile_commands.json\noclint-xcodebuild\n\necho \"[*] copy compile_commands.json to the project root...\"\ncp ${TARGET_TEMP_DIR}/compile_commands.json ${SRCROOT}/compile_commands.json\nfi\n\necho \"[*] starting analyzing\"\ncd ${TARGET_TEMP_DIR}\noclint-json-compilation-database | sed 's/\\(.*\\.\\m\\{1,2\\}:[0-9]*:[0-9]*:\\)/\\1 warning:/'";
+			shellScript = XcodeCoverage/exportenv.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -383,6 +466,8 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -422,6 +507,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -440,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CHZZSudoku/CHZZSudoku-Prefix.pch";
 				INFOPLIST_FILE = "CHZZSudoku/CHZZSudoku-Info.plist";
@@ -501,20 +588,6 @@
 			};
 			name = Release;
 		};
-		A8A9853919CBB71B00D3DAE3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		A8A9853A19CBB71B00D3DAE3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -541,15 +614,6 @@
 			buildConfigurations = (
 				A8A984EF19CA545300D3DAE3 /* Debug */,
 				A8A984F019CA545300D3DAE3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A8A9853B19CBB71B00D3DAE3 /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A8A9853919CBB71B00D3DAE3 /* Debug */,
-				A8A9853A19CBB71B00D3DAE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
