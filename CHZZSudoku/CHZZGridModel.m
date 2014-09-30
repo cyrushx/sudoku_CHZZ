@@ -34,7 +34,7 @@ int initGrid[9][9];
 -(NSString*) readString:(NSString*) fileName
 {
     // genearte path and read the string
-    NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@"txt"];
+    NSString* path = [[NSBundle mainBundle] pathForResource:fileName ofType:@""];
     NSError* error;
     
     NSString* readString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
