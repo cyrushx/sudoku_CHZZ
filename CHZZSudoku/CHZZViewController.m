@@ -77,13 +77,17 @@
     ASSISTON = NO;
     
     // set up assist label
-    CGFloat xLabel = CGRectGetWidth(frame) * 0.38;
     CGFloat yLabel = CGRectGetHeight(frame) * 0.9;
     CGFloat labelSize = startButtonSize;
+    CGFloat xLabel = xSwitch - labelSize;
+    NSLog(@"%f",xSwitch);
+    NSLog(@"%f",labelSize);
+    NSLog(@"%f",xLabel);
     CGRect labelFrame = CGRectMake(xLabel, yLabel, labelSize, labelSize/2);
     UILabel* label = [[UILabel alloc] initWithFrame:labelFrame];
-    [label setText:@"ASSIST ON: "];
+    [label setText:@"TURN ASSIST ON: "];
     [label setTextColor:[UIColor blackColor]];
+    label.adjustsFontSizeToFitWidth = YES;
     [self.view addSubview:label];
     
     // initialize _gridModel

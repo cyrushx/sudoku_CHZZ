@@ -98,7 +98,7 @@
     UIButton* button = (UIButton*) sender;
     
     if([sender tag] == 1){
-        _currentValue = [[button currentTitle] integerValue];
+        _currentValue = (int) [[button currentTitle] integerValue];
         //[self getCurrentValue];
         [_target performSelector:_action withObject:[NSNumber numberWithInt:_currentValue]];
     }else if([sender tag] == 2){
